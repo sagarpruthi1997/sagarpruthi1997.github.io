@@ -1,0 +1,724 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Application Security (AppSec) | CloudSufi InfoSec</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+</head><body>
+
+<!-- TOP BANNER -->
+<div class="top-banner"><div class="container"><p>🔒 CloudSufi AI Security Agents — 48-hour deployment. <a href="index.html">Learn more →</a></p></div></div>
+
+<!-- NAV -->
+<nav class="nav"><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-icon" width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="16" stroke="#FF4646" stroke-width="2.5"/><circle cx="20" cy="22" r="10" stroke="#FF4646" stroke-width="2.5"/><circle cx="20" cy="22" r="4" fill="#FF4646"/><line x1="20" y1="22" x2="30" y2="8" stroke="#FF4646" stroke-width="2.5" stroke-linecap="round"/><polyline points="26,7 30,8 29,12" stroke="#FF4646" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="5" r="2.2" fill="#1863DC"/><circle cx="37" cy="10" r="1.6" fill="#00D084"/><circle cx="36" cy="3" r="1.4" fill="#75CCCF"/></svg>
+    <span class="logo-wordmark">CLOUD<span>SUFI</span></span>
+  </a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="index.html#services">Services</a><a href="index.html#domains">Domains</a><a href="index.html#contact">Contact</a></div>
+  <div class="nav-cta">
+    <a href="index.html#contact" class="btn btn-outline-blue" style="padding:10px 20px;font-size:13px;">Schedule Demo</a>
+    <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Free Assessment</a>
+  </div>
+</div></div></nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb"><div class="container">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="index.html#domains">InfoSec Domains</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Application Security</span>
+  </div>
+</div></div>
+
+<!-- HERO -->
+<section class="domain-hero">
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+  <div class="container">
+    <div class="hero-body">
+      <div class="hero-eyebrow"><span class="pulse"></span> Application Security Domain</div>
+      <div class="hero-icon-wrap">📱</div>
+      <h1 class="h1">Shift-Left Application Security —<br>Build <em style="color:#75CCCF;font-style:normal;">Secure</em>. Ship <em style="color:#00D084;font-style:normal;">Fast</em>. Stay <em style="color:#75CCCF;font-style:normal;">Compliant</em>.</h1>
+      <p class="hero-desc">CloudSufi embeds security directly into your software development lifecycle — catching vulnerabilities in code before they reach production, securing your APIs, managing open source risk, and building security capability within your engineering teams.</p>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn btn-primary">Secure Your Applications</a>
+        <a href="#provide" class="btn btn-outline-white">Explore AppSec Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-num"><em>SAST</em></div>
+          <div class="stat-lbl">DAST &amp; SCA in CI/CD</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>API</em></div>
+          <div class="stat-lbl">Security Testing</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>OWASP</em></div>
+          <div class="stat-lbl">Top 10 Full Coverage</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>Secure</em></div>
+          <div class="stat-lbl">Code Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section class="section challenge-section" id="challenge">
+  <div class="container">
+    <div class="challenge-grid">
+      <div>
+        <div class="label">The Application Security Problem</div>
+        <h2 class="h2">Applications Are Your <em>Largest Attack Surface</em></h2>
+        <p class="sub" style="margin-bottom:8px;">84% of breaches exploit application layer vulnerabilities — and the gap between how fast development teams ship code and how fast security teams can review it is only growing. The answer isn't slowing down developers. It's embedding security where code is written.</p>
+        <div class="challenge-points">
+          <div class="challenge-point">
+            <div class="cp-icon">⏱️</div>
+            <div>
+              <div class="cp-title">Vulnerabilities Found Late</div>
+              <div class="cp-desc">The average cost to fix a security vulnerability found in production is 6× higher than fixing it during development. Yet most organizations have no security checks in their development pipeline — discovering flaws only after code ships.</div>
+            </div>
+          </div>
+          <div class="challenge-point">
+            <div class="cp-icon">🔌</div>
+            <div>
+              <div class="cp-title">API Attack Surface Explosion</div>
+              <div class="cp-desc">APIs now account for 91% of web traffic and are the primary attack target for modern attackers. Most organizations have hundreds of undocumented shadow APIs — each a potential entry point that no one is actively monitoring or testing.</div>
+            </div>
+          </div>
+          <div class="challenge-point">
+            <div class="cp-icon">📦</div>
+            <div>
+              <div class="cp-title">Open Source &amp; Supply Chain Risk</div>
+              <div class="cp-desc">The average application uses 200+ open source libraries. Log4j demonstrated how a single open-source vulnerability can expose millions of applications simultaneously — and most teams don't know which libraries they're running until it's too late.</div>
+            </div>
+          </div>
+          <div class="challenge-point">
+            <div class="cp-icon">👨‍💻</div>
+            <div>
+              <div class="cp-title">Developer Security Skill Gap</div>
+              <div class="cp-desc">Developers are not security experts, and security teams don't understand code. Without tools that meet developers in their workflow — their IDE, their CI/CD pipeline — security becomes a release blocker rather than an enabler.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="challenge-visual">
+          <div class="cv-label">Application Security Reality</div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">84%</div>
+              <div class="cv-lbl">of breaches exploit application layer vulnerabilities</div>
+            </div>
+            <div class="cv-bad">CRITICAL</div>
+          </div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">6×</div>
+              <div class="cv-lbl">more expensive to fix in production vs. development</div>
+            </div>
+            <div class="cv-bad">HIGH</div>
+          </div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">200+</div>
+              <div class="cv-lbl">avg open source dependencies per application</div>
+            </div>
+            <div class="cv-bad">HIGH</div>
+          </div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">91%</div>
+              <div class="cv-lbl">of web traffic is API-based and under-secured</div>
+            </div>
+            <div class="cv-bad">CRITICAL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE PROVIDE -->
+<section class="section provide-section" id="provide">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <div class="label">What We Provide</div>
+      <h2 class="h2">Full-Spectrum <em>AppSec Services</em></h2>
+      <p class="sub sub-center">From automated pipeline security testing to expert code review and developer security training, CloudSufi delivers every layer of application security your development organization needs — without slowing your team down.</p>
+    </div>
+    <div class="provide-grid">
+
+      <div class="provide-card reveal">
+        <div class="provide-icon">🔬</div>
+        <div class="provide-title">Static Application Security Testing (SAST)</div>
+        <div class="provide-desc">Automated code analysis integrated directly into your IDE and CI/CD pipeline — detecting SQL injection, cross-site scripting, buffer overflows, and 500+ vulnerability types before code is ever committed or merged. Security feedback in seconds, not sprint cycles.</div>
+        <ul class="provide-list">
+          <li>IDE plugin for real-time feedback</li>
+          <li>CI/CD pipeline gate integration</li>
+          <li>500+ vulnerability type detection</li>
+          <li>Low false-positive AI tuning</li>
+        </ul>
+      </div>
+
+      <div class="provide-card reveal">
+        <div class="provide-icon">🌐</div>
+        <div class="provide-title">Dynamic Application Security Testing (DAST)</div>
+        <div class="provide-desc">Runtime testing of deployed applications — simulating attacker behavior against your running application to identify authentication flaws, injection vulnerabilities, session management weaknesses, and business logic errors that static analysis can never detect.</div>
+        <ul class="provide-list">
+          <li>Authenticated scan coverage</li>
+          <li>OWASP Top 10 full coverage</li>
+          <li>Business logic flaw detection</li>
+          <li>Continuous scheduled scanning</li>
+        </ul>
+      </div>
+
+      <div class="provide-card reveal">
+        <div class="provide-icon">📦</div>
+        <div class="provide-title">Software Composition Analysis (SCA)</div>
+        <div class="provide-desc">Continuous scanning of all open source dependencies and third-party libraries across your entire application portfolio — identifying known CVEs, license compliance issues, and malicious packages before they ship to production or compromise your supply chain.</div>
+        <ul class="provide-list">
+          <li>Full dependency tree scanning</li>
+          <li>CVE correlation and severity triage</li>
+          <li>License compliance enforcement</li>
+          <li>Malicious package detection</li>
+        </ul>
+      </div>
+
+      <div class="provide-card reveal">
+        <div class="provide-icon">🔌</div>
+        <div class="provide-title">API Security Testing &amp; Discovery</div>
+        <div class="provide-desc">Automated discovery of all APIs across your environment — including undocumented and shadow APIs — followed by comprehensive security testing for OWASP API Security Top 10 vulnerabilities and continuous runtime API behavior monitoring.</div>
+        <ul class="provide-list">
+          <li>Shadow API discovery</li>
+          <li>OWASP API Top 10 testing</li>
+          <li>Runtime API behavior monitoring</li>
+          <li>API inventory and documentation</li>
+        </ul>
+      </div>
+
+      <div class="provide-card reveal">
+        <div class="provide-icon">👁️</div>
+        <div class="provide-title">Secure Code Review</div>
+        <div class="provide-desc">Expert-led manual code review for your most critical applications — focusing on business logic flaws, authentication and authorization vulnerabilities, cryptographic implementation errors, and architectural weaknesses that automated tools cannot detect with certainty.</div>
+        <ul class="provide-list">
+          <li>Business logic flaw analysis</li>
+          <li>Authentication vulnerability review</li>
+          <li>Cryptographic implementation audit</li>
+          <li>Architectural security assessment</li>
+        </ul>
+      </div>
+
+      <div class="provide-card reveal">
+        <div class="provide-icon">🎓</div>
+        <div class="provide-title">Security Champions Program</div>
+        <div class="provide-desc">Developer security training, secure coding guidelines, and an embedded security champion program that builds security capability within your engineering teams — creating a culture where security is owned by developers, not delegated to an external team that slows releases.</div>
+        <ul class="provide-list">
+          <li>Hands-on developer security training</li>
+          <li>Secure coding guidelines by stack</li>
+          <li>Security champion identification</li>
+          <li>Ongoing awareness and enablement</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="section cap-section" id="capabilities">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div class="label">Technology Partners</div>
+      <h2 class="h2">AppSec <em>Platform Expertise</em></h2>
+      <p class="sub sub-center">CloudSufi implements and operates AppSec programs on the industry's leading security testing platforms — integrating natively with your existing development toolchain for zero-friction security adoption.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item reveal">
+        <div class="cap-icon">🔬</div>
+        <div class="cap-name">Checkmarx SAST</div>
+        <div class="cap-sub">Enterprise static code analysis</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🛡️</div>
+        <div class="cap-name">Veracode</div>
+        <div class="cap-sub">Cloud-based SAST, DAST &amp; SCA</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🐍</div>
+        <div class="cap-name">Snyk SCA</div>
+        <div class="cap-sub">Developer-first open source security</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">⚡</div>
+        <div class="cap-name">OWASP ZAP DAST</div>
+        <div class="cap-sub">Dynamic application scanning</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🎯</div>
+        <div class="cap-name">Burp Suite Pro</div>
+        <div class="cap-sub">Web app &amp; API security testing</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🐙</div>
+        <div class="cap-name">GitHub Advanced Security</div>
+        <div class="cap-sub">Native SAST, secret scanning &amp; SCA</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🦊</div>
+        <div class="cap-name">GitLab Ultimate</div>
+        <div class="cap-sub">DevSecOps platform security</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">📊</div>
+        <div class="cap-name">SonarQube</div>
+        <div class="cap-sub">Code quality &amp; security analysis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section benefits-section" id="benefits">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <div class="label">Business Impact</div>
+      <h2 class="h2">What CloudSufi AppSec <em>Delivers</em></h2>
+      <p class="sub sub-center">Application security isn't just about reducing risk — it's about enabling your engineering teams to ship faster by catching and fixing security issues where they cost the least to resolve: in the IDE and CI/CD pipeline.</p>
+    </div>
+    <div class="benefits-grid">
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🚫</div>
+        <div>
+          <div class="benefit-title">Prevent Breaches at the Source</div>
+          <div class="benefit-desc">By catching vulnerabilities in the development pipeline — not in production — CloudSufi eliminates the conditions that create 84% of application layer breaches before they ever have the chance to be exploited by attackers.</div>
+          <span class="benefit-metric">80% earlier vulnerability discovery in SDLC</span>
+        </div>
+      </div>
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🚀</div>
+        <div>
+          <div class="benefit-title">Accelerate Secure Development</div>
+          <div class="benefit-desc">Security feedback in the IDE and pipeline doesn't slow development — it eliminates the costly, disruptive rework cycles that happen when vulnerabilities are discovered in staging or production. Developers fix issues in minutes, not weeks.</div>
+          <span class="benefit-metric">40% reduction in security-caused release delays</span>
+        </div>
+      </div>
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">💰</div>
+        <div>
+          <div class="benefit-title">Reduce Remediation Costs Dramatically</div>
+          <div class="benefit-desc">Fixing vulnerabilities in development costs 6× less than fixing them in production — and 100× less than fixing them after a breach. Shifting security left isn't just a best practice; it's a direct cost reduction investment with measurable ROI.</div>
+          <span class="benefit-metric">6× lower remediation cost vs. production fixes</span>
+        </div>
+      </div>
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🔌</div>
+        <div>
+          <div class="benefit-title">API Attack Surface Control</div>
+          <div class="benefit-desc">Continuous API discovery and testing eliminates shadow APIs, enforces authentication and authorization standards, and ensures every API endpoint is tested against the OWASP API Security Top 10 before it faces the public internet.</div>
+          <span class="benefit-metric">API attack surface fully mapped and tested</span>
+        </div>
+      </div>
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📦</div>
+        <div>
+          <div class="benefit-title">Open Source Risk Management</div>
+          <div class="benefit-desc">Comprehensive SCA visibility into every open source library, transitive dependency, and third-party component across your application portfolio — ensuring your next Log4j exposure is identified in hours, not weeks, and remediated before exploitation.</div>
+          <span class="benefit-metric">100% open source dependency visibility</span>
+        </div>
+      </div>
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📋</div>
+        <div>
+          <div class="benefit-title">Compliance with OWASP &amp; PCI Requirements</div>
+          <div class="benefit-desc">PCI-DSS requires regular application security testing. SOC 2 requires secure development practices. HIPAA requires application-level safeguards. CloudSufi AppSec delivers continuous compliance evidence mapped to each framework's specific controls.</div>
+          <span class="benefit-metric">Automated OWASP, PCI &amp; SOC 2 audit evidence</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AI ADVANTAGE -->
+<section class="section ai-section" id="ai">
+  <div class="container">
+    <div class="ai-layout">
+      <div>
+        <div class="label label-light">AI-Powered AppSec</div>
+        <h2 class="h2 h2-white">AI That Understands <em>Your Code</em></h2>
+        <p class="sub sub-white" style="margin-bottom:40px;">Traditional SAST tools generate thousands of false positives that developers learn to ignore. CloudSufi's AI code analysis agents understand code context, data flow, and business logic — finding real vulnerabilities while eliminating the noise that kills developer trust in security tools.</p>
+        <div class="ai-points">
+          <div class="ai-point">
+            <div class="ai-point-icon">🧠</div>
+            <div>
+              <div class="ai-point-title">AI-Assisted Code Review That Understands Context</div>
+              <div class="ai-point-desc">Unlike pattern-matching SAST, our AI understands data flow, taint analysis, and business logic — accurately distinguishing exploitable vulnerabilities from theoretical findings that waste developer time.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">🎯</div>
+            <div>
+              <div class="ai-point-title">Automated Triage Reducing Developer Noise by 80%</div>
+              <div class="ai-point-desc">AI-powered vulnerability triage filters false positives before they reach developers — ensuring engineers see only confirmed, exploitable findings with clear severity context. Security alerts become actionable, not ignorable.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">🔧</div>
+            <div>
+              <div class="ai-point-title">AI-Generated Remediation Guidance in Code</div>
+              <div class="ai-point-desc">When a vulnerability is detected, our AI generates specific, context-aware remediation code — not generic documentation links. Developers receive the exact fix for their specific codebase, in their specific language and framework.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">🔌</div>
+            <div>
+              <div class="ai-point-title">Continuous API Discovery vs. Manual Inventory</div>
+              <div class="ai-point-desc">Manual API inventories are always stale. Our AI continuously monitors traffic patterns, code repositories, and deployment artifacts to discover APIs the moment they're created — including shadow APIs your team doesn't know exist.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="ai-panel">
+          <div class="ai-panel-label">CloudSufi AppSec AI Agents — Live</div>
+
+          <div class="ai-row">
+            <div class="ai-row-icon">🔬</div>
+            <div>
+              <div class="ai-row-name">AI Code Analysis Agent</div>
+              <div class="ai-row-status">● SAST scanning active</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">2.1M</div>
+              <div class="l">lines analyzed today</div>
+            </div>
+          </div>
+          <div class="ai-divider"></div>
+
+          <div class="ai-core">
+            <strong>CloudSufi AppSec AI Engine</strong>
+            <span>Vulnerability classification in &lt;200ms</span>
+          </div>
+          <div class="ai-divider"></div>
+
+          <div class="ai-row">
+            <div class="ai-row-icon">🎯</div>
+            <div>
+              <div class="ai-row-name">Vulnerability Classification AI</div>
+              <div class="ai-row-status">● False-positive reduction active</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">80%</div>
+              <div class="l">noise reduction</div>
+            </div>
+          </div>
+          <div class="ai-divider"></div>
+
+          <div class="ai-row">
+            <div class="ai-row-icon">🔧</div>
+            <div>
+              <div class="ai-row-name">Auto Fix Suggestion Agent</div>
+              <div class="ai-row-status">● Remediation generation active</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">94%</div>
+              <div class="l">fix acceptance rate</div>
+            </div>
+          </div>
+          <div class="ai-divider"></div>
+
+          <div class="ai-row">
+            <div class="ai-row-icon">🔌</div>
+            <div>
+              <div class="ai-row-name">API Discovery Agent</div>
+              <div class="ai-row-status">● Continuous discovery running</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">1,847</div>
+              <div class="l">APIs tracked</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section method-section" id="methodology">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;">
+      <div>
+        <div class="label">Our Process</div>
+        <h2 class="h2">How We Build Your <em>AppSec Program</em></h2>
+        <p class="sub">A developer-centric, phased approach that integrates security into your existing SDLC without disrupting release cadence — delivering immediate vulnerability detection while building long-term developer security capability.</p>
+        <div style="margin-top:32px;padding:24px;background:#F0F7FF;border-radius:12px;border-left:4px solid #1863DC;">
+          <div style="font-size:14px;font-weight:700;color:#1863DC;margin-bottom:8px;">Deployment Timeline</div>
+          <div style="font-size:13px;color:#4E4B66;line-height:1.7;">SAST and SCA integrated within <strong style="color:#0C1E39;">48 hours</strong>. DAST and API testing live within <strong style="color:#0C1E39;">1 week</strong>. Full security champion program within <strong style="color:#0C1E39;">30 days</strong>.</div>
+        </div>
+        <div style="margin-top:20px;padding:24px;background:#FFF8F0;border-radius:12px;border-left:4px solid #FF4646;">
+          <div style="font-size:14px;font-weight:700;color:#CC2200;margin-bottom:8px;">Why Shift-Left Matters</div>
+          <div style="font-size:13px;color:#4E4B66;line-height:1.7;">A bug found in the IDE costs $80 to fix. The same bug found in production costs $7,600. Found after a breach — it costs $4.5M on average. Security at the source isn't optional anymore.</div>
+        </div>
+      </div>
+      <div class="method-steps">
+
+        <div class="method-step">
+          <div class="ms-num">1</div>
+          <div>
+            <div class="ms-title">Application Discovery &amp; Inventory</div>
+            <div class="ms-desc">We enumerate your entire application portfolio — web applications, mobile apps, APIs, microservices, and internal tools — building a complete inventory with technology stack, framework, language, and business criticality ratings. Security can't protect what it doesn't know about.</div>
+            <div class="ms-tags">
+              <span class="tag">App Inventory</span>
+              <span class="tag">API Discovery</span>
+              <span class="tag">Stack Assessment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="ms-num">2</div>
+          <div>
+            <div class="ms-title">Pipeline Integration (SAST &amp; SCA)</div>
+            <div class="ms-desc">SAST and SCA tools are integrated directly into your CI/CD pipeline — configured as quality gates that block high-severity vulnerabilities from merging. IDE plugins are deployed to engineering workstations for real-time developer feedback while code is being written.</div>
+            <div class="ms-tags">
+              <span class="tag">Checkmarx / Snyk</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">GitLab CI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="ms-num">3</div>
+          <div>
+            <div class="ms-title">DAST &amp; API Security Testing</div>
+            <div class="ms-desc">Dynamic testing is configured against staging and pre-production environments — simulating real attacker behavior against running applications. API security testing covers every discovered endpoint against the OWASP API Security Top 10, with findings mapped to risk and exploitability.</div>
+            <div class="ms-tags">
+              <span class="tag">Burp Suite / OWASP ZAP</span>
+              <span class="tag">API Testing</span>
+              <span class="tag">Auth Testing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="ms-num">4</div>
+          <div>
+            <div class="ms-title">Developer Training &amp; Security Champions</div>
+            <div class="ms-desc">Security champions are identified and embedded within engineering squads. Role-specific secure coding training is delivered in the languages and frameworks your developers actually use — Python, Java, JavaScript, Go — with hands-on labs built around your own codebase patterns.</div>
+            <div class="ms-tags">
+              <span class="tag">Security Champions</span>
+              <span class="tag">Secure Coding Labs</span>
+              <span class="tag">Threat Modeling</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="ms-num">5</div>
+          <div>
+            <div class="ms-title">Continuous Scanning &amp; Reporting</div>
+            <div class="ms-desc">All security tools run continuously — scanning every code commit, every dependency update, and every deployment. Monthly vulnerability trend reports, quarterly AppSec maturity assessments, and executive dashboards track your program's effectiveness over time.</div>
+            <div class="ms-tags">
+              <span class="tag">Continuous Scanning</span>
+              <span class="tag">Trend Reporting</span>
+              <span class="tag">Exec Dashboard</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="outcomes-band">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px;position:relative;z-index:2;">
+      <div class="label label-white">Proven Results</div>
+      <h2 class="h2 h2-white" style="margin-bottom:0;">AppSec Outcomes That <em>Matter</em></h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">80%</span></div>
+        <div class="outcome-label">Earlier Vulnerability Discovery</div>
+        <div class="outcome-sub">Caught in pipeline vs. production</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">60%</span></div>
+        <div class="outcome-label">Fewer Production Vulnerabilities</div>
+        <div class="outcome-sub">Within 6 months of program launch</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">100%</span></div>
+        <div class="outcome-label">Open Source Visibility</div>
+        <div class="outcome-sub">Every dependency tracked and scanned</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">Full</span></div>
+        <div class="outcome-label">API Attack Surface Mapped</div>
+        <div class="outcome-sub">Including shadow and undocumented APIs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT GETS TESTED: Quick reference table -->
+<section class="section cap-section" id="coverage" style="background:#F4F7FB;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div class="label">Security Coverage</div>
+      <h2 class="h2">What CloudSufi AppSec <em>Tests and Protects</em></h2>
+      <p class="sub sub-center">Complete coverage across the OWASP Top 10, OWASP API Security Top 10, and framework-specific vulnerability classes — mapped to your tech stack and compliance requirements.</p>
+    </div>
+    <div class="table-scroll">
+      <table class="cmp">
+        <thead><tr>
+          <th>Security Domain</th>
+          <th>Traditional Approach</th>
+          <th class="th-cs">CloudSufi AppSec</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td>Code Vulnerability Detection</td>
+            <td class="td-trad"><span class="crs">✗</span> Manual pen test once a year</td>
+            <td class="td-cs"><span class="chk">✓</span> Continuous SAST on every commit</td>
+          </tr>
+          <tr>
+            <td>Open Source Risk</td>
+            <td class="td-trad"><span class="crs">✗</span> No systematic tracking</td>
+            <td class="td-cs"><span class="chk">✓</span> Real-time SCA across all repos</td>
+          </tr>
+          <tr>
+            <td>API Security</td>
+            <td class="td-trad"><span class="crs">✗</span> Documented APIs only, if tested</td>
+            <td class="td-cs"><span class="chk">✓</span> All APIs discovered and tested continuously</td>
+          </tr>
+          <tr>
+            <td>Runtime Testing</td>
+            <td class="td-trad"><span class="crs">✗</span> Quarterly DAST scan (if budget exists)</td>
+            <td class="td-cs"><span class="chk">✓</span> Continuous DAST against staging</td>
+          </tr>
+          <tr>
+            <td>Developer Feedback Loop</td>
+            <td class="td-trad"><span class="crs">✗</span> Security team finds issues post-release</td>
+            <td class="td-cs"><span class="chk">✓</span> Real-time IDE and PR feedback</td>
+          </tr>
+          <tr>
+            <td>Remediation Guidance</td>
+            <td class="td-trad"><span class="crs">✗</span> Generic CVE description links</td>
+            <td class="td-cs"><span class="chk">✓</span> AI-generated fix code for your codebase</td>
+          </tr>
+          <tr>
+            <td>Compliance Evidence</td>
+            <td class="td-trad"><span class="crs">✗</span> Manual evidence collection at audit time</td>
+            <td class="td-cs"><span class="chk">✓</span> Continuous automated compliance reporting</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED SERVICES -->
+<section class="section related-section" id="related">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:44px;">
+      <div class="label">Complete Security Coverage</div>
+      <h2 class="h2">Related <em>Security Domains</em></h2>
+      <p class="sub sub-center">Application security works best as part of a layered defense — pair it with cloud security, penetration testing, and vulnerability management for complete coverage from code to production.</p>
+    </div>
+    <div class="related-grid">
+      <a href="cloud-security.html" class="related-card reveal">
+        <div class="related-icon">☁️</div>
+        <div class="related-title">Cloud Security</div>
+        <div class="related-desc">Extend AppSec controls into your cloud deployment pipeline — securing container images, Kubernetes configurations, and serverless functions as they ship to AWS, Azure, and GCP.</div>
+        <span class="related-link">Explore Cloud Security →</span>
+      </a>
+      <a href="vulnerability-management.html" class="related-card reveal">
+        <div class="related-icon">🔍</div>
+        <div class="related-title">Vulnerability Management</div>
+        <div class="related-desc">AppSec findings integrated into your enterprise vulnerability management program — prioritized, tracked, and remediated through a unified risk-based workflow.</div>
+        <span class="related-link">Explore Vuln Management →</span>
+      </a>
+      <a href="pentest.html" class="related-card reveal">
+        <div class="related-icon">🎯</div>
+        <div class="related-title">Penetration Testing</div>
+        <div class="related-desc">Validate your AppSec controls with adversarial simulation — expert testers attempting to exploit the same vulnerabilities your SAST and DAST tools protect against in production.</div>
+        <span class="related-link">Explore Pentest →</span>
+      </a>
+      <a href="network-security.html" class="related-card reveal">
+        <div class="related-icon">🌐</div>
+        <div class="related-title">Network Security</div>
+        <div class="related-desc">Protect the network layer that your applications depend on — ensuring WAF policies, API gateways, and network-level controls complement your application security testing program.</div>
+        <span class="related-link">Explore Network Security →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="label label-white">Free AppSec Assessment</div>
+      <div class="cta-title">Secure Your Applications<br>From Code to Cloud</div>
+      <div class="cta-desc">Discover your OWASP Top 10 exposure, shadow API inventory, and open source risk — before attackers do. CloudSufi delivers a comprehensive application security assessment at no cost, with results in 48 hours.</div>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn btn-white">Get Free AppSec Assessment</a>
+        <a href="index.html#contact" class="btn btn-outline-white">Schedule a Demo</a>
+      </div>
+      <div class="cta-perks">
+        <span class="cta-perk">No commitment required</span>
+        <span class="cta-perk">Results in 48 hours</span>
+        <span class="cta-perk">OWASP Top 10 coverage</span>
+        <span class="cta-perk">Developer-friendly output</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="16" stroke="#FF4646" stroke-width="2.2"/><circle cx="20" cy="22" r="10" stroke="#FF4646" stroke-width="2.2"/><circle cx="20" cy="22" r="4" fill="#FF4646"/><line x1="20" y1="22" x2="30" y2="8" stroke="#FF4646" stroke-width="2.2" stroke-linecap="round"/><polyline points="26,7 30,8 29,12" stroke="#FF4646" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="5" r="2" fill="#1863DC"/><circle cx="37" cy="10" r="1.5" fill="#00D084"/><circle cx="36" cy="3" r="1.3" fill="#75CCCF"/></svg>
+        <span class="footer-wordmark">CLOUDSUFI</span>
+      </div>
+      <p class="footer-tagline">We Make Enterprise Data Dance — and we keep it safe.</p>
+      <div class="footer-contact-item">📧 <a href="mailto:security@cloudsufi.com">security@cloudsufi.com</a></div>
+      <div class="footer-contact-item">🌐 <a href="https://cloudsufi.com">cloudsufi.com</a></div>
+      <div class="footer-certs"><span class="fcert">ISO 27001</span><span class="fcert">SOC 2 Type II</span><span class="fcert">FedRAMP Ready</span></div>
+    </div>
+    <div><div class="footer-h">Services</div><ul class="footer-links"><li><a href="soc.html">SOC-as-a-Service</a></li><li><a href="vulnerability-management.html">Vulnerability Management</a></li><li><a href="risk-management.html">Risk Management</a></li><li><a href="grc.html">Compliance &amp; Audit</a></li><li><a href="cloud-security.html">Cloud Security</a></li><li><a href="pentest.html">Penetration Testing</a></li><li><a href="incident-response.html">Incident Response</a></li></ul></div>
+    <div><div class="footer-h">Domains</div><ul class="footer-links"><li><a href="threat-intelligence.html">Threat Intelligence</a></li><li><a href="iam.html">Identity &amp; Access</a></li><li><a href="network-security.html">Network Security</a></li><li><a href="appsec.html">Application Security</a></li><li><a href="data-security.html">Data Security</a></li><li><a href="grc.html">GRC</a></li></ul></div>
+    <div><div class="footer-h">Company</div><ul class="footer-links"><li><a href="https://cloudsufi.com/about">About CloudSufi</a></li><li><a href="index.html#contact">Contact Sales</a></li><li><a href="index.html#contact">Request Demo</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2024 CloudSufi Inc. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Security</a></div>
+  </div>
+</div></footer>
+
+<script>
+  document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.08}).observe(el)});
+</script>
+</body></html>

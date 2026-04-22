@@ -1,0 +1,713 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cyber Risk Management | CloudSufi InfoSec</title>
+<meta name="description" content="CloudSufi's FAIR-based quantitative cyber risk management transforms gut feelings into board-ready financial risk numbers — with real-time scoring, third-party risk monitoring, and AI-generated executive reporting."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+  .method-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+  .framework-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 24px; }
+  .fw-pill {
+    padding: 12px 10px; text-align: center; border-radius: 8px;
+    background: rgba(24,99,220,0.08); border: 1px solid rgba(24,99,220,0.18);
+    font-size: 13px; font-weight: 700; color: var(--cs-blue);
+    transition: all 0.2s;
+  }
+  .fw-pill:hover { background: rgba(24,99,220,0.15); border-color: rgba(24,99,220,0.35); }
+  .risk-gauge { background: var(--cs-dark-bg); border: 1px solid rgba(24,99,220,0.2); border-radius: var(--radius-xl); padding: 30px; }
+  .rg-label { font-size: 11px; font-weight: 700; color: var(--cs-cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+  .rg-item { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .rg-name { font-size: 13px; color: rgba(255,255,255,0.7); width: 130px; flex-shrink: 0; }
+  .rg-bar-wrap { flex: 1; height: 8px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden; }
+  .rg-bar { height: 100%; border-radius: 4px; }
+  .rg-val { font-size: 12px; font-weight: 700; color: #fff; font-family: 'JetBrains Mono', monospace; width: 52px; text-align: right; flex-shrink: 0; }
+  .bar-red    { background: linear-gradient(to right, #FF4646, #FF6B6B); }
+  .bar-orange { background: linear-gradient(to right, #FF8C00, #FFB347); }
+  .bar-yellow { background: linear-gradient(to right, #FFD700, #FFE55C); }
+  .bar-green  { background: linear-gradient(to right, #00D084, #4AE5A2); }
+  .bar-blue   { background: linear-gradient(to right, #1863DC, #4488EE); }
+  .fair-box { background: linear-gradient(135deg, rgba(24,99,220,0.12), rgba(117,204,207,0.08)); border: 1px solid rgba(24,99,220,0.2); border-radius: var(--radius-md); padding: 24px; margin-top: 28px; }
+  .fair-box h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--cs-text-light); margin-bottom: 16px; }
+  .fair-scenarios { display: flex; flex-direction: column; gap: 10px; }
+  .fair-s { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: white; border: 1px solid var(--cs-border); border-radius: var(--radius-sm); }
+  .fair-s-name { font-size: 13px; font-weight: 600; color: var(--cs-text-dark); }
+  .fair-s-range { font-size: 13px; font-weight: 700; color: var(--cs-blue); font-family: 'JetBrains Mono', monospace; }
+  @media(max-width:900px) { .method-layout { grid-template-columns: 1fr; } .framework-grid { grid-template-columns: repeat(4,1fr); } }
+  @media(max-width:480px) { .framework-grid { grid-template-columns: repeat(2,1fr); } }
+</style>
+</head><body>
+
+<div class="top-banner"><div class="container"><p>🔒 CloudSufi AI Security Agents — 48-hour deployment, zero disruption. <a href="index.html">Learn more →</a></p></div></div>
+<nav class="nav"><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-icon" width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="16" stroke="#FF4646" stroke-width="2.5"/><circle cx="20" cy="22" r="10" stroke="#FF4646" stroke-width="2.5"/><circle cx="20" cy="22" r="4" fill="#FF4646"/><line x1="20" y1="22" x2="30" y2="8" stroke="#FF4646" stroke-width="2.5" stroke-linecap="round"/><polyline points="26,7 30,8 29,12" stroke="#FF4646" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="5" r="2.2" fill="#1863DC"/><circle cx="37" cy="10" r="1.6" fill="#00D084"/><circle cx="36" cy="3" r="1.4" fill="#75CCCF"/></svg>
+    <span class="logo-wordmark">CLOUD<span>SUFI</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="index.html#services">Services</a><a href="index.html#domains">Domains</a><a href="index.html#ai-twin">AI Digital Twin</a><a href="index.html#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a href="index.html#contact" class="btn btn-outline-blue" style="padding:10px 20px;font-size:13px;">Schedule Demo</a>
+    <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Free Assessment</a>
+  </div>
+</div></div></nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="index.html#services">InfoSec Services</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Risk Management</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="domain-hero">
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+  <div class="container">
+    <div class="hero-body">
+      <div class="hero-eyebrow">
+        <span class="pulse"></span>
+        Quantitative Cyber Risk Management
+      </div>
+      <div class="hero-icon-wrap">⚖️</div>
+      <h1 class="h1">Cyber Risk Management —<br/>From Gut Feeling to Board-Ready Numbers.</h1>
+      <p class="hero-desc">CloudSufi's quantitative risk management practice transforms vague security concerns into precise financial risk figures your board can understand and act on. Using Open FAIR methodology, AI-powered risk scoring, and real-time posture monitoring, we give your organization the risk intelligence needed to make confident, defensible security investment decisions.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-num"><em>FAIR</em></div>
+          <div class="stat-lbl">Based Quantification</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>Real-Time</em></div>
+          <div class="stat-lbl">Risk Scoring</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>Board</em></div>
+          <div class="stat-lbl">Level Reporting</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>3P</em></div>
+          <div class="stat-lbl">Third-Party Risk Coverage</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn btn-primary">Get Your Risk Score — Free</a>
+        <a href="index.html#contact" class="btn btn-outline-white">Download Risk Management Brief</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section class="section challenge-section">
+  <div class="container">
+    <div class="challenge-grid">
+      <div>
+        <span class="label">The Problem</span>
+        <h2 class="h2">Why Traditional Risk Programs <em>Fail</em></h2>
+        <p class="sub">Most organizations have a risk register — but few have a functional risk management program. The gap between documenting risks and actually reducing them is where breaches happen.</p>
+        <div class="challenge-points">
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🔴</span>
+            <div>
+              <div class="cp-title">No Financial Context for Risk Decisions</div>
+              <div class="cp-desc">Security teams use qualitative ratings like "High / Medium / Low" that mean nothing to finance or the board. Without dollar figures attached to risks, security investments compete poorly for budget against revenue-generating initiatives — and security loses.</div>
+            </div>
+          </div>
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🔴</span>
+            <div>
+              <div class="cp-title">Inability to Communicate Risk to the Board</div>
+              <div class="cp-desc">60% of CISOs report they cannot effectively communicate cyber risk in terms the board understands. Heat maps and traffic lights don't translate into capital allocation decisions. Boards need dollars and probabilities — not colors and feelings.</div>
+            </div>
+          </div>
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🔴</span>
+            <div>
+              <div class="cp-title">Static, Manual Risk Registers</div>
+              <div class="cp-desc">Traditional risk registers are built once a year in a spreadsheet, then ignored. They don't update when your environment changes, new vulnerabilities emerge, or threat actor activity escalates — making them dangerously outdated within weeks of creation.</div>
+            </div>
+          </div>
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🔴</span>
+            <div>
+              <div class="cp-title">Third-Party &amp; Supply Chain Risk Blindness</div>
+              <div class="cp-desc">45% of significant breaches now involve a third party. Yet most risk programs rely on annual vendor questionnaires completed by vendors themselves — with no continuous monitoring, no technical validation, and no real-time risk visibility into your supply chain.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="challenge-visual">
+          <div class="cv-label">Cyber Risk Reality — 2024</div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">$4.88M</div>
+              <div class="cv-lbl">Average cost of a data breach (IBM 2024)</div>
+            </div>
+            <div class="cv-bad">↑ Record High</div>
+          </div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">83%</div>
+              <div class="cv-lbl">Of organizations had more than one breach</div>
+            </div>
+            <div class="cv-bad">↑ Repeat Victims</div>
+          </div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">60%</div>
+              <div class="cv-lbl">Of CISOs can't quantify risk in dollar terms</div>
+            </div>
+            <div class="cv-bad">↑ Visibility Gap</div>
+          </div>
+          <div class="cv-stat">
+            <div>
+              <div class="cv-val">45%</div>
+              <div class="cv-lbl">Of breaches involve third parties</div>
+            </div>
+            <div class="cv-bad">↑ Supply Chain Risk</div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:rgba(24,99,220,0.08);border-radius:8px;border:1px solid rgba(24,99,220,0.15);">
+            <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;">Organizations that quantify cyber risk in financial terms make 40% better security investment decisions, according to Gartner. CloudSufi makes FAIR-based quantification accessible to mid-market and enterprise clients alike.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE PROVIDE -->
+<section class="section provide-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <span class="label">Core Capabilities</span>
+      <h2 class="h2">What CloudSufi Risk Management <em>Delivers</em></h2>
+      <p class="sub sub-center">Six integrated capabilities that build a living, quantitative risk management program aligned to your business objectives, regulatory environment, and risk appetite.</p>
+    </div>
+    <div class="provide-grid">
+      <div class="provide-card reveal">
+        <div class="provide-icon">📐</div>
+        <div class="provide-title">FAIR-Based Risk Quantification</div>
+        <div class="provide-desc">We apply the Open FAIR (Factor Analysis of Information Risk) methodology to convert every cyber risk scenario into a financial impact range — expressed as annualized loss expectancy (ALE) with Monte Carlo simulation for confidence intervals your CFO can use.</div>
+        <ul class="provide-list">
+          <li>Open FAIR methodology, industry standard</li>
+          <li>Monte Carlo simulation for probability ranges</li>
+          <li>Annualized Loss Expectancy (ALE) calculation</li>
+          <li>Risk scenario modeling &amp; sensitivity analysis</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">📋</div>
+        <div class="provide-title">Dynamic Risk Register</div>
+        <div class="provide-desc">CloudSufi maintains a living risk register that updates automatically as your environment changes — when new vulnerabilities are discovered, threat intelligence changes, or your asset inventory evolves. No more annual snapshots that are stale on day two.</div>
+        <ul class="provide-list">
+          <li>AI-maintained risk inventory with real-time updates</li>
+          <li>Automatic risk recalculation on environment changes</li>
+          <li>Risk ownership assignment &amp; accountability tracking</li>
+          <li>Risk treatment tracking (accept / mitigate / transfer)</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">🏢</div>
+        <div class="provide-title">Business Impact Analysis (BIA)</div>
+        <div class="provide-desc">We identify and model your most critical business processes and information assets, quantifying the confidentiality, integrity, and availability impact of disruption scenarios — providing the foundation for informed risk prioritization and business continuity planning.</div>
+        <ul class="provide-list">
+          <li>Critical asset identification &amp; classification</li>
+          <li>CIA triad impact modeling per asset</li>
+          <li>Recovery time &amp; recovery point objective analysis</li>
+          <li>Revenue-impact modeling for downtime scenarios</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">🌐</div>
+        <div class="provide-title">Third-Party &amp; Supply Chain Risk</div>
+        <div class="provide-desc">We replace annual vendor questionnaires with continuous third-party risk monitoring — scoring every critical vendor on technical posture, compliance status, and threat intelligence signals — giving you real-time visibility into supply chain risk without demanding months of vendor engagement.</div>
+        <ul class="provide-list">
+          <li>Continuous vendor attack surface monitoring</li>
+          <li>Automated security questionnaire distribution</li>
+          <li>Vendor risk scoring with real-time updates</li>
+          <li>Critical vendor deep-dive assessments</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">📏</div>
+        <div class="provide-title">Regulatory Risk Mapping</div>
+        <div class="provide-desc">Every risk in your register is automatically mapped to applicable regulatory and framework requirements — showing compliance officers and auditors exactly which controls address which risks, and which risk gaps represent potential compliance failures before an audit finds them.</div>
+        <ul class="provide-list">
+          <li>Multi-framework risk-to-control mapping</li>
+          <li>Regulatory gap identification &amp; remediation planning</li>
+          <li>Compliance risk quantification in dollar terms</li>
+          <li>Audit-ready risk documentation &amp; evidence</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">📊</div>
+        <div class="provide-title">Board &amp; CISO Reporting</div>
+        <div class="provide-desc">Automated executive dashboards, risk heat maps, financial exposure trending, and security investment ROI analysis — all generated by our AI reporting engine. Your CISO walks into every board meeting with compelling, credible data that earns budget and builds confidence.</div>
+        <ul class="provide-list">
+          <li>Real-time risk posture dashboard</li>
+          <li>Board-ready risk heat maps &amp; trend charts</li>
+          <li>Security investment ROI analysis</li>
+          <li>Natural language risk narrative generation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES / FRAMEWORKS -->
+<section class="section cap-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <span class="label">Framework Coverage</span>
+      <h2 class="h2">Risk Frameworks We <em>Support</em></h2>
+      <p class="sub sub-center">CloudSufi's risk management practice is framework-agnostic — we support the methodologies your organization already uses, plus best-in-class frameworks your program needs to adopt.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item reveal">
+        <div class="cap-icon">📐</div>
+        <div class="cap-name">Open FAIR</div>
+        <div class="cap-sub">Factor Analysis of Information Risk — the standard for quantitative cyber risk measurement and financial impact modeling</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🏛️</div>
+        <div class="cap-name">NIST RMF</div>
+        <div class="cap-sub">NIST Risk Management Framework — categorize, select, implement, assess, authorize, and monitor for federal and regulated environments</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🌍</div>
+        <div class="cap-name">ISO 31000</div>
+        <div class="cap-sub">International standard for enterprise risk management — principles, framework, and process for integrated organizational risk governance</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🏢</div>
+        <div class="cap-name">COSO ERM</div>
+        <div class="cap-sub">Enterprise risk management framework for aligning cyber risk with corporate governance, strategy, and financial reporting standards</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🚗</div>
+        <div class="cap-name">TARA</div>
+        <div class="cap-sub">Threat Agent Risk Assessment — threat-agent centric methodology for systematic risk identification in complex technical environments</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🔬</div>
+        <div class="cap-name">OCTAVE</div>
+        <div class="cap-sub">Operationally Critical Threat, Asset, and Vulnerability Evaluation — asset-driven risk methodology for mid-sized organizations</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🛡️</div>
+        <div class="cap-name">CIS RAM</div>
+        <div class="cap-sub">CIS Risk Assessment Method — designed to help organizations implement and evaluate the CIS Controls with a risk-based approach</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🔺</div>
+        <div class="cap-name">STRIDE</div>
+        <div class="cap-sub">Spoofing, Tampering, Repudiation, Information Disclosure, DoS, Elevation — threat modeling framework for system and application risk analysis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section benefits-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <span class="label">Business Value</span>
+      <h2 class="h2">Client Outcomes &amp; <em>Strategic Value</em></h2>
+      <p class="sub sub-center">CloudSufi risk management clients don't just understand their risk — they make better decisions, earn more budget, and reduce their exposure year over year with quantifiable proof.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📢</div>
+        <div>
+          <div class="benefit-title">Board-Level Risk Communication</div>
+          <div class="benefit-desc">When the board asks "what's our cyber risk exposure?" your CISO answers with a dollar range and a probability — not a heat map. Financial language earns board trust, unlocks security budget, and elevates the CISO to a true strategic advisor role.</div>
+          <span class="benefit-metric">→ Board risk reporting in hours, not weeks</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">💡</div>
+        <div>
+          <div class="benefit-title">Informed Security Investment Decisions</div>
+          <div class="benefit-desc">Compare the cost of a security control against the risk it reduces — in financial terms. Justify every security investment with a calculated risk reduction ROI and make portfolio decisions that maximize security value per dollar spent.</div>
+          <span class="benefit-metric">→ 40% better security investment decisions (Gartner)</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🌐</div>
+        <div>
+          <div class="benefit-title">Third-Party Risk Reduction</div>
+          <div class="benefit-desc">Continuous vendor monitoring replaces annual check-the-box questionnaires. Identify deteriorating vendor security posture before a supply chain breach occurs — and have the risk data to make informed vendor selection and contract decisions.</div>
+          <span class="benefit-metric">→ 45% improvement in third-party risk visibility</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">✅</div>
+        <div>
+          <div class="benefit-title">Regulatory Confidence &amp; Audit Readiness</div>
+          <div class="benefit-desc">A mature risk management program demonstrates due care and due diligence to regulators. Our risk-to-control mapping keeps you perpetually audit-ready — with documented evidence of risk treatment decisions that satisfy even the most rigorous regulatory examiners.</div>
+          <span class="benefit-metric">→ Perpetually audit-ready risk documentation</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📈</div>
+        <div>
+          <div class="benefit-title">Real-Time Risk Posture Visibility</div>
+          <div class="benefit-desc">No more waiting for the annual risk assessment to understand where you stand. CloudSufi's AI continuously monitors your environment and recalculates risk scores in real time — so leadership always has an accurate, current picture of organizational risk exposure.</div>
+          <span class="benefit-metric">→ Continuous risk scoring, updated in real-time</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🏦</div>
+        <div>
+          <div class="benefit-title">Cyber Insurance Optimization</div>
+          <div class="benefit-desc">Quantified risk data makes cyber insurance negotiations dramatically more effective. Demonstrate to insurers the specific controls you have in place, the residual risk you carry, and the data that supports favorable policy terms and reduced premiums.</div>
+          <span class="benefit-metric">→ Average 18% cyber insurance premium reduction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI ADVANTAGE -->
+<section class="section ai-section">
+  <div class="container">
+    <div class="ai-layout">
+      <div>
+        <div class="ai-panel">
+          <div class="ai-panel-label">CloudSufi Risk AI Engine — Live Dashboard</div>
+          <div class="ai-row">
+            <div class="ai-row-icon">📊</div>
+            <div>
+              <div class="ai-row-name">Risk Scoring Agent</div>
+              <div class="ai-row-status">● Active — Continuous risk recalculation</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">Real-time</div>
+              <div class="l">Score Refresh</div>
+            </div>
+          </div>
+          <div class="ai-divider"></div>
+          <div class="ai-row">
+            <div class="ai-row-icon">🏢</div>
+            <div>
+              <div class="ai-row-name">BIA Agent</div>
+              <div class="ai-row-status">● Active — Business impact modeling</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">147</div>
+              <div class="l">Assets Modeled</div>
+            </div>
+          </div>
+          <div class="ai-divider"></div>
+          <div class="ai-core">
+            <strong>CloudSufi Risk AI Core — FAIR Quantification Engine</strong>
+            <span>Dynamic • Financial • Board-Ready</span>
+          </div>
+          <div class="ai-divider"></div>
+          <div class="ai-row">
+            <div class="ai-row-icon">🌐</div>
+            <div>
+              <div class="ai-row-name">Third-Party Monitor</div>
+              <div class="ai-row-status">● Active — 83 vendors under surveillance</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">83</div>
+              <div class="l">Vendors Scored</div>
+            </div>
+          </div>
+          <div class="ai-divider"></div>
+          <div class="ai-row">
+            <div class="ai-row-icon">📋</div>
+            <div>
+              <div class="ai-row-name">Reporting Engine</div>
+              <div class="ai-row-status">● Active — Auto-generating board package</div>
+            </div>
+            <div class="ai-row-val">
+              <div class="v">Auto</div>
+              <div class="l">Report Gen</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;">
+            <div class="rg-label">Current Risk Heat Map — By Domain</div>
+            <div class="rg-item">
+              <div class="rg-name">Third-Party Risk</div>
+              <div class="rg-bar-wrap"><div class="rg-bar bar-red" style="width:82%"></div></div>
+              <div class="rg-val">$3.2M</div>
+            </div>
+            <div class="rg-item">
+              <div class="rg-name">Cloud Security</div>
+              <div class="rg-bar-wrap"><div class="rg-bar bar-orange" style="width:67%"></div></div>
+              <div class="rg-val">$2.6M</div>
+            </div>
+            <div class="rg-item">
+              <div class="rg-name">Ransomware</div>
+              <div class="rg-bar-wrap"><div class="rg-bar bar-orange" style="width:61%"></div></div>
+              <div class="rg-val">$2.1M</div>
+            </div>
+            <div class="rg-item">
+              <div class="rg-name">Insider Threat</div>
+              <div class="rg-bar-wrap"><div class="rg-bar bar-yellow" style="width:44%"></div></div>
+              <div class="rg-val">$1.3M</div>
+            </div>
+            <div class="rg-item">
+              <div class="rg-name">Data Exfiltration</div>
+              <div class="rg-bar-wrap"><div class="rg-bar bar-blue" style="width:35%"></div></div>
+              <div class="rg-val">$0.9M</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="label label-light">The AI Difference</span>
+        <h2 class="h2 h2-white">Why AI-Driven Risk Management <em>Outperforms</em> Traditional Programs</h2>
+        <p class="sub sub-white" style="margin-bottom:36px;">Traditional risk management is a periodic exercise. CloudSufi makes it a continuous, intelligent, financially-grounded discipline that adapts in real time to your evolving environment and threat landscape.</p>
+        <div class="ai-points">
+          <div class="ai-point">
+            <div class="ai-point-icon">📡</div>
+            <div>
+              <div class="ai-point-title">Continuous vs. Point-in-Time Risk Scoring</div>
+              <div class="ai-point-desc">Annual risk assessments are obsolete the moment they're completed. CloudSufi's AI recalculates risk scores continuously — responding to new vulnerability disclosures, changes in threat actor activity, and modifications to your environment — keeping leadership perpetually current.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">🔮</div>
+            <div>
+              <div class="ai-point-title">Scenario Modeling with AI</div>
+              <div class="ai-point-desc">Our AI can model "what if" risk scenarios in minutes — what would our financial exposure be if we suffered a ransomware attack on our ERP system? What risk does migrating payroll to the cloud introduce? These answers inform capital allocation decisions at the board level.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">🔄</div>
+            <div>
+              <div class="ai-point-title">Automatic Risk Recalculation on Change</div>
+              <div class="ai-point-desc">When a new critical vulnerability is published, a vendor's security posture deteriorates, or your organization undergoes a merger — CloudSufi automatically recalculates affected risk scores and updates your register within hours, not months.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">📝</div>
+            <div>
+              <div class="ai-point-title">Natural Language Board Reports</div>
+              <div class="ai-point-desc">Our AI reporting engine generates board-ready risk narratives in plain English — converting complex risk data into executive summaries with clear implications and recommended actions that non-technical board members can immediately comprehend and act on.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section method-section">
+  <div class="container">
+    <div class="method-layout">
+      <div>
+        <span class="label">Program Structure</span>
+        <h2 class="h2">Risk Management <em>Methodology</em></h2>
+        <p class="sub">A five-phase program lifecycle that builds a living, quantitative risk management capability — not a one-time assessment deliverable.</p>
+        <div class="fair-box">
+          <h4>FAIR Risk Scenario Examples</h4>
+          <div class="fair-scenarios">
+            <div class="fair-s">
+              <div class="fair-s-name">Ransomware — Crown Jewel System</div>
+              <div class="fair-s-range">$1.2M – $8.4M</div>
+            </div>
+            <div class="fair-s">
+              <div class="fair-s-name">Supply Chain Compromise</div>
+              <div class="fair-s-range">$0.8M – $5.2M</div>
+            </div>
+            <div class="fair-s">
+              <div class="fair-s-name">Privileged Insider Exfiltration</div>
+              <div class="fair-s-range">$0.4M – $3.1M</div>
+            </div>
+            <div class="fair-s">
+              <div class="fair-s-name">Cloud Misconfiguration Data Breach</div>
+              <div class="fair-s-range">$0.6M – $4.7M</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <div class="framework-grid">
+            <div class="fw-pill">FAIR</div>
+            <div class="fw-pill">NIST RMF</div>
+            <div class="fw-pill">ISO 31000</div>
+            <div class="fw-pill">COSO</div>
+            <div class="fw-pill">OCTAVE</div>
+            <div class="fw-pill">CIS RAM</div>
+            <div class="fw-pill">STRIDE</div>
+            <div class="fw-pill">TARA</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="method-steps">
+          <div class="method-step reveal">
+            <div class="ms-num">1</div>
+            <div>
+              <div class="ms-title">Risk Identification &amp; Scoping <span class="tag" style="margin-left:8px;">Week 1–2</span></div>
+              <div class="ms-desc">We work with your leadership team to define risk appetite, identify the scope of the risk program, and enumerate risk scenarios relevant to your industry, technology stack, and regulatory obligations. Stakeholder interviews and asset inventories drive a comprehensive initial risk catalog.</div>
+              <div class="ms-tags"><span class="tag">Risk Catalog</span><span class="tag">Stakeholder Interviews</span><span class="tag">Risk Appetite</span></div>
+            </div>
+          </div>
+          <div class="method-step reveal">
+            <div class="ms-num">2</div>
+            <div>
+              <div class="ms-title">Quantitative Risk Analysis <span class="tag" style="margin-left:8px;">Week 2–4</span></div>
+              <div class="ms-desc">Each identified risk scenario is analyzed using Open FAIR methodology — decomposing threat event frequency, vulnerability analysis, and loss magnitude into a financial exposure range. Monte Carlo simulation produces probability distributions your CFO and actuaries can work with directly.</div>
+              <div class="ms-tags"><span class="tag">FAIR Analysis</span><span class="tag">Monte Carlo Simulation</span><span class="tag">ALE Calculation</span></div>
+            </div>
+          </div>
+          <div class="method-step reveal">
+            <div class="ms-num">3</div>
+            <div>
+              <div class="ms-title">Dynamic Risk Register Build <span class="tag" style="margin-left:8px;">Week 3–5</span></div>
+              <div class="ms-desc">Quantified risks are loaded into CloudSufi's AI-maintained risk register — connected to your asset inventory, vulnerability data, and threat intelligence feeds. Risk scores automatically update when these underlying data sources change, ensuring perpetual accuracy.</div>
+              <div class="ms-tags"><span class="tag">AI Risk Register</span><span class="tag">Dynamic Scoring</span><span class="tag">Owner Assignment</span></div>
+            </div>
+          </div>
+          <div class="method-step reveal">
+            <div class="ms-num">4</div>
+            <div>
+              <div class="ms-title">Control Mapping &amp; Risk Treatment <span class="tag" style="margin-left:8px;">Week 4–6</span></div>
+              <div class="ms-desc">Every risk is mapped to existing controls and compliance requirements, identifying coverage gaps and quantifying the residual risk after controls are applied. Risk treatment decisions — accept, mitigate, transfer, or avoid — are documented with rationale and financial justification.</div>
+              <div class="ms-tags"><span class="tag">Control Mapping</span><span class="tag">Gap Analysis</span><span class="tag">Risk Treatment</span></div>
+            </div>
+          </div>
+          <div class="method-step reveal">
+            <div class="ms-num">5</div>
+            <div>
+              <div class="ms-title">Continuous Monitoring &amp; Board Reporting <span class="tag" style="margin-left:8px;">Ongoing</span></div>
+              <div class="ms-desc">Real-time dashboards and monthly automated board reports keep leadership informed of risk posture changes, treatment progress, and emerging threats. Quarterly risk reviews refine scenarios based on new intelligence and organizational changes — ensuring the program evolves with your business.</div>
+              <div class="ms-tags"><span class="tag">Real-Time Dashboard</span><span class="tag">Monthly Board Report</span><span class="tag">Quarterly Review</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES BAND -->
+<div class="outcomes-band">
+  <div class="container">
+    <div class="outcomes-grid">
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">60</span>%</div>
+        <div class="outcome-label">Risk reduction in 12 months</div>
+        <div class="outcome-sub">avg. client ALE reduction</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">Hours</span></div>
+        <div class="outcome-label">Board risk reporting time</div>
+        <div class="outcome-sub">vs. weeks for manual prep</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">45</span>%</div>
+        <div class="outcome-label">Third-party risk visibility</div>
+        <div class="outcome-sub">improvement in year one</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">Real-Time</span></div>
+        <div class="outcome-label">Risk score updates</div>
+        <div class="outcome-sub">continuous, not annual</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED SERVICES -->
+<section class="section related-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px;">
+      <span class="label">Ecosystem</span>
+      <h2 class="h2">Related <em>Services</em></h2>
+      <p class="sub sub-center">Risk management is most powerful when connected to the operational security capabilities that reduce the risks your register identifies — closing the loop from insight to action.</p>
+    </div>
+    <div class="related-grid">
+      <a href="grc.html" class="related-card reveal">
+        <div class="related-icon">📋</div>
+        <div class="related-title">Compliance &amp; GRC</div>
+        <div class="related-desc">Map identified risks to compliance obligations across all applicable frameworks — SOC 2, ISO 27001, PCI-DSS, HIPAA, and more.</div>
+        <span class="related-link">Explore GRC →</span>
+      </a>
+      <a href="vulnerability-management.html" class="related-card reveal">
+        <div class="related-icon">🔍</div>
+        <div class="related-title">Vulnerability Management</div>
+        <div class="related-desc">Vulnerability data directly informs risk scoring. Close the loop between risk identification and technical remediation programs.</div>
+        <span class="related-link">Explore VM →</span>
+      </a>
+      <a href="cloud-security.html" class="related-card reveal">
+        <div class="related-icon">☁️</div>
+        <div class="related-title">Cloud Security Posture</div>
+        <div class="related-desc">Cloud misconfigurations are one of the highest-risk scenarios. CSPM data feeds directly into cloud risk quantification models.</div>
+        <span class="related-link">Explore Cloud Security →</span>
+      </a>
+      <a href="index.html#comparison" class="related-card reveal">
+        <div class="related-icon">📊</div>
+        <div class="related-title">CloudSufi vs. Traditional Programs</div>
+        <div class="related-desc">See a detailed comparison of CloudSufi's AI-native risk management approach versus traditional GRC consulting models.</div>
+        <span class="related-link">View Comparison →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <h2 class="cta-title">Get Your Risk Posture Scored — Free in 5 Days</h2>
+      <p class="cta-desc">CloudSufi's complimentary Risk Posture Assessment identifies your top 5 cyber risk scenarios, quantifies them using FAIR methodology, and delivers a board-ready executive summary — in 5 business days, at no cost and no commitment.</p>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn btn-white">Start Free Risk Assessment</a>
+        <a href="index.html#contact" class="btn btn-outline-white">Download Risk Management Brief</a>
+      </div>
+      <div class="cta-perks">
+        <span class="cta-perk">FAIR-based quantification</span>
+        <span class="cta-perk">Top 5 risks scored in dollars</span>
+        <span class="cta-perk">Board-ready executive summary</span>
+        <span class="cta-perk">No commitment required</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="16" stroke="#FF4646" stroke-width="2.2"/><circle cx="20" cy="22" r="10" stroke="#FF4646" stroke-width="2.2"/><circle cx="20" cy="22" r="4" fill="#FF4646"/><line x1="20" y1="22" x2="30" y2="8" stroke="#FF4646" stroke-width="2.2" stroke-linecap="round"/><polyline points="26,7 30,8 29,12" stroke="#FF4646" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="5" r="2" fill="#1863DC"/><circle cx="37" cy="10" r="1.5" fill="#00D084"/><circle cx="36" cy="3" r="1.3" fill="#75CCCF"/></svg>
+        <span class="footer-wordmark">CLOUDSUFI</span>
+      </div>
+      <p class="footer-tagline">We Make Enterprise Data Dance — and we keep it safe. AI-powered information security for the modern enterprise.</p>
+      <div class="footer-contact-item">📧 <a href="mailto:security@cloudsufi.com">security@cloudsufi.com</a></div>
+      <div class="footer-contact-item">🌐 <a href="https://cloudsufi.com">cloudsufi.com</a></div>
+      <div class="footer-certs"><span class="fcert">ISO 27001</span><span class="fcert">SOC 2 Type II</span><span class="fcert">FedRAMP Ready</span></div>
+    </div>
+    <div><div class="footer-h">Services</div><ul class="footer-links"><li><a href="soc.html">SOC-as-a-Service</a></li><li><a href="vulnerability-management.html">Vulnerability Management</a></li><li><a href="risk-management.html">Risk Management</a></li><li><a href="grc.html">Compliance &amp; Audit</a></li><li><a href="cloud-security.html">Cloud Security</a></li><li><a href="pentest.html">Penetration Testing</a></li><li><a href="incident-response.html">Incident Response</a></li></ul></div>
+    <div><div class="footer-h">Domains</div><ul class="footer-links"><li><a href="threat-intelligence.html">Threat Intelligence</a></li><li><a href="iam.html">Identity &amp; Access</a></li><li><a href="network-security.html">Network Security</a></li><li><a href="appsec.html">Application Security</a></li><li><a href="data-security.html">Data Security</a></li><li><a href="grc.html">GRC</a></li><li><a href="index.html#ai-twin">AI Digital Twin</a></li></ul></div>
+    <div><div class="footer-h">Company</div><ul class="footer-links"><li><a href="https://cloudsufi.com/about">About CloudSufi</a></li><li><a href="https://cloudsufi.com/careers">Careers</a></li><li><a href="https://cloudsufi.com/blog">Security Blog</a></li><li><a href="index.html#contact">Contact Sales</a></li><li><a href="index.html#contact">Request Demo</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2024 CloudSufi Inc. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Security</a></div>
+  </div>
+</div></footer>
+<script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');} }); }, {threshold:0.08}).observe(el);
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => { const t = document.querySelector(link.getAttribute('href')); if(!t) return; e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 74, behavior:'smooth'}); });
+  });
+</script>
+</body></html>

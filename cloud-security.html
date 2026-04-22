@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cloud Security (CSPM/CWPP/CIEM) | CloudSufi InfoSec</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+</head><body>
+
+<!-- TOP BANNER -->
+<div class="top-banner"><div class="container"><p>🔒 CloudSufi AI Security Agents — 48-hour deployment, zero disruption. <a href="index.html">Learn more →</a></p></div></div>
+
+<!-- NAV -->
+<nav class="nav"><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-icon" width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="16" stroke="#FF4646" stroke-width="2.5"/><circle cx="20" cy="22" r="10" stroke="#FF4646" stroke-width="2.5"/><circle cx="20" cy="22" r="4" fill="#FF4646"/><line x1="20" y1="22" x2="30" y2="8" stroke="#FF4646" stroke-width="2.5" stroke-linecap="round"/><polyline points="26,7 30,8 29,12" stroke="#FF4646" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="5" r="2.2" fill="#1863DC"/><circle cx="37" cy="10" r="1.6" fill="#00D084"/><circle cx="36" cy="3" r="1.4" fill="#75CCCF"/></svg>
+    <span class="logo-wordmark">CLOUD<span>SUFI</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="index.html#services">Services</a><a href="index.html#domains">Domains</a><a href="index.html#ai-twin">AI Digital Twin</a><a href="index.html#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a href="index.html#contact" class="btn btn-outline-blue" style="padding:10px 20px;font-size:13px;">Schedule Demo</a>
+    <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Free Assessment</a>
+  </div>
+</div></div></nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="index.html#services">InfoSec Services</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Cloud Security</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="domain-hero">
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+  <div class="container">
+    <div class="hero-body">
+      <div class="hero-icon-wrap">☁️</div>
+      <div class="hero-eyebrow"><span class="pulse"></span>Cloud Security — CSPM · CWPP · CIEM</div>
+      <h1 class="h1">Cloud Security Posture Management —<br/>See Every Misconfiguration.<br/>Fix It Before Attackers Do.</h1>
+      <p class="hero-desc">CloudSufi's AI-driven cloud security platform provides complete visibility into your AWS, Azure, and GCP environments — continuously scanning for misconfigurations, over-privileged identities, and runtime threats. We find what attackers are looking for before they do, and remediate it automatically.</p>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn btn-primary">Get Free Cloud Posture Score →</a>
+        <a href="index.html#contact" class="btn btn-outline-white">Schedule a Demo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-num"><em>AWS</em></div>
+          <div class="stat-lbl">Azure &amp; GCP Coverage</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>Live</em></div>
+          <div class="stat-lbl">Real-Time Posture Scoring</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>Auto</em></div>
+          <div class="stat-lbl">Remediation Engine</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">500<em>+</em></div>
+          <div class="stat-lbl">Security Policies</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section class="section challenge-section">
+  <div class="container">
+    <div class="challenge-grid">
+      <div>
+        <span class="label">The Problem</span>
+        <h2 class="h2">Why Cloud Environments <em>Get Breached</em></h2>
+        <p class="sub">Cloud breaches are not sophisticated zero-day attacks. They are overwhelmingly caused by misconfigurations and over-privileged identities that have existed undetected for months — or years.</p>
+        <div class="challenge-points">
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🪣</span>
+            <div>
+              <div class="cp-title">Misconfiguration Epidemic</div>
+              <div class="cp-desc">The #1 cause of cloud breaches is misconfiguration — open S3 buckets, overpermissioned roles, exposed secrets. These are not sophisticated attacks; they are preventable configuration errors that native cloud tools fail to surface at scale.</div>
+            </div>
+          </div>
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🔑</span>
+            <div>
+              <div class="cp-title">Identity &amp; Permission Sprawl</div>
+              <div class="cp-desc">The average cloud environment has 10× more permissions than are actually used. Over-privileged identities — service accounts, human users, and machine identities — are the primary attack vector for cloud account takeover and lateral movement.</div>
+            </div>
+          </div>
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🌐</span>
+            <div>
+              <div class="cp-title">Multi-Cloud Complexity</div>
+              <div class="cp-desc">Organizations using AWS, Azure, and GCP each face different native security tools, different configuration models, and different logging formats — creating fragmented visibility that attackers exploit across cloud boundaries with impunity.</div>
+            </div>
+          </div>
+          <div class="challenge-point reveal">
+            <span class="cp-icon">🚨</span>
+            <div>
+              <div class="cp-title">Runtime Threat Detection Gaps</div>
+              <div class="cp-desc">Traditional security tools monitor the perimeter, but cloud-native workloads — containers, serverless functions, Kubernetes pods — require dedicated runtime protection that most organizations' security stacks simply do not provide.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="challenge-visual reveal">
+        <div class="cv-label">Cloud Security Industry Data</div>
+        <div class="cv-stat">
+          <div>
+            <div class="cv-val">80%</div>
+            <div class="cv-lbl">of cloud breaches caused by misconfiguration (Gartner)</div>
+          </div>
+          <div class="cv-bad">CRITICAL</div>
+        </div>
+        <div class="cv-stat">
+          <div>
+            <div class="cv-val">45,000+</div>
+            <div class="cv-lbl">average misconfigurations per enterprise cloud environment</div>
+          </div>
+          <div class="cv-bad">HIGH</div>
+        </div>
+        <div class="cv-stat">
+          <div>
+            <div class="cv-val">10×</div>
+            <div class="cv-lbl">more permissions exist than are actually needed or used</div>
+          </div>
+          <div class="cv-bad">HIGH</div>
+        </div>
+        <div class="cv-stat">
+          <div>
+            <div class="cv-val">67%</div>
+            <div class="cv-lbl">of organizations have experienced a cloud security incident</div>
+          </div>
+          <div class="cv-bad">CRITICAL</div>
+        </div>
+        <div style="margin-top:20px;padding:16px;background:rgba(0,208,132,0.08);border:1px solid rgba(0,208,132,0.2);border-radius:8px;">
+          <div style="font-size:11px;font-weight:700;color:#00D084;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">CloudSufi's Response</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;">Continuous CSPM scanning, AI-powered permission right-sizing, and automated remediation eliminate cloud misconfigurations before attackers discover them.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE PROVIDE -->
+<section class="section provide-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <span class="label">What We Provide</span>
+      <h2 class="h2">Full-Spectrum Cloud Security — <em>CSPM · CIEM · CWPP</em></h2>
+      <p class="sub sub-center">Six integrated layers of cloud security coverage that span posture management, identity governance, workload protection, and infrastructure-as-code security — unified in a single AI-powered platform.</p>
+    </div>
+    <div class="provide-grid">
+      <div class="provide-card reveal">
+        <div class="provide-icon">🔭</div>
+        <div class="provide-title">Cloud Security Posture Management (CSPM)</div>
+        <div class="provide-desc">Continuous scanning of your entire cloud configuration against 500+ security policies and CIS benchmarks across AWS, Azure, and GCP. Every resource, every configuration, every permission — assessed in real time against industry best practices and compliance requirements.</div>
+        <ul class="provide-list">
+          <li>500+ security policies across AWS, Azure, GCP</li>
+          <li>CIS Benchmark compliance scoring per account</li>
+          <li>Real-time misconfiguration detection and alerting</li>
+          <li>Compliance mapping to SOC 2, ISO 27001, PCI-DSS</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">🔑</div>
+        <div class="provide-title">Cloud Infrastructure Entitlement Management (CIEM)</div>
+        <div class="provide-desc">AI-powered analysis of every identity, role, policy, and permission across your cloud environments to identify and right-size excessive access. Human users, service accounts, and machine identities are all analyzed for least-privilege violations and toxic permission combinations.</div>
+        <ul class="provide-list">
+          <li>Full identity and permission graph visualization</li>
+          <li>Unused permission detection and removal recommendations</li>
+          <li>Toxic permission combination identification</li>
+          <li>AI-generated least-privilege IAM policies</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">🛡️</div>
+        <div class="provide-title">Cloud Workload Protection (CWPP)</div>
+        <div class="provide-desc">Runtime protection for VMs, containers, Kubernetes clusters, and serverless functions. Behavioral monitoring detects anomalous workload activity, lateral movement, and runtime attacks that no configuration scan can catch — protecting your workloads during live execution.</div>
+        <ul class="provide-list">
+          <li>Container and Kubernetes runtime security</li>
+          <li>Serverless function behavioral monitoring</li>
+          <li>VM vulnerability assessment and threat detection</li>
+          <li>Micro-segmentation and network policy enforcement</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">📋</div>
+        <div class="provide-title">Infrastructure-as-Code Security</div>
+        <div class="provide-desc">Shift-left scanning of Terraform, CloudFormation, ARM templates, and Kubernetes manifests to catch misconfigurations before they ever reach production. Security issues are surfaced in the developer's IDE and CI/CD pipeline — where they are cheapest to fix.</div>
+        <ul class="provide-list">
+          <li>Terraform, CloudFormation, ARM template scanning</li>
+          <li>IDE plugin for developer-first security feedback</li>
+          <li>CI/CD pipeline integration with policy gates</li>
+          <li>Git repository scanning for secrets and misconfigs</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">🌩️</div>
+        <div class="provide-title">Cloud-Native Threat Detection</div>
+        <div class="provide-desc">Deep integration with AWS GuardDuty, Azure Defender for Cloud, and Google Security Command Center — enriched with CloudSufi's AI-powered correlation engine that connects alerts across cloud boundaries to identify complete attack chains that individual tools miss.</div>
+        <ul class="provide-list">
+          <li>AWS GuardDuty, Azure Defender, GCP SCC integration</li>
+          <li>Cross-cloud attack chain correlation</li>
+          <li>CloudTrail, Azure Monitor, and GCP Logs analysis</li>
+          <li>AI-powered alert prioritization and noise reduction</li>
+        </ul>
+      </div>
+      <div class="provide-card reveal">
+        <div class="provide-icon">⚡</div>
+        <div class="provide-title">Automated Remediation &amp; Drift Prevention</div>
+        <div class="provide-desc">AI agents automatically remediate misconfigurations based on your configured policy — either applying fixes directly (for approved change types) or creating change-controlled remediation tickets routed to the right team. Configuration drift is prevented from recurring through policy guardrails.</div>
+        <ul class="provide-list">
+          <li>Auto-remediation for approved misconfiguration types</li>
+          <li>Change-controlled ticket creation for sensitive changes</li>
+          <li>Configuration drift detection and prevention policies</li>
+          <li>Service Control Policies and Azure Policies deployment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="section cap-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <span class="label">Platform Coverage</span>
+      <h2 class="h2">Every Cloud, Every Tool, <em>Every Workload</em></h2>
+      <p class="sub sub-center">CloudSufi's cloud security platform integrates natively with all major cloud providers, container orchestrators, and infrastructure-as-code tools — providing unified visibility across your entire cloud estate.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item reveal">
+        <div class="cap-icon">🟠</div>
+        <div class="cap-name">Amazon Web Services</div>
+        <div class="cap-sub">EC2, S3, RDS, Lambda, IAM, VPC, EKS, ECS, and all 200+ AWS services</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🔵</div>
+        <div class="cap-name">Microsoft Azure</div>
+        <div class="cap-sub">VMs, Blob Storage, Azure AD, AKS, Functions, SQL, and all Azure services</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🟡</div>
+        <div class="cap-name">Google Cloud Platform</div>
+        <div class="cap-sub">GCE, GCS, BigQuery, GKE, Cloud Functions, IAM, and all GCP services</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">⎈</div>
+        <div class="cap-name">Kubernetes</div>
+        <div class="cap-sub">EKS, AKS, GKE, and self-managed clusters — runtime security and RBAC analysis</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🐳</div>
+        <div class="cap-name">Docker</div>
+        <div class="cap-sub">Container image scanning, registry analysis, and runtime behavioral monitoring</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🏗️</div>
+        <div class="cap-name">Terraform</div>
+        <div class="cap-sub">IaC security scanning with policy-as-code gates and automated fix suggestions</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">📄</div>
+        <div class="cap-name">AWS CloudFormation</div>
+        <div class="cap-sub">Template scanning for security misconfigurations before stack deployment</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">📐</div>
+        <div class="cap-name">Azure ARM Templates</div>
+        <div class="cap-sub">Resource Manager template analysis with security policy validation</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🔄</div>
+        <div class="cap-name">GitHub Actions</div>
+        <div class="cap-sub">CI/CD pipeline security scanning with policy gates blocking insecure deployments</div>
+      </div>
+      <div class="cap-item reveal">
+        <div class="cap-icon">🦊</div>
+        <div class="cap-name">GitLab CI</div>
+        <div class="cap-sub">GitLab pipeline integration with IaC scanning and secrets detection</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section benefits-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <span class="label">Business Impact</span>
+      <h2 class="h2">What Cloud Security <em>Delivers</em></h2>
+      <p class="sub sub-center">CloudSufi's cloud security platform delivers security outcomes and business value simultaneously — protecting your environment while reducing operational overhead and cloud spend.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🚫</div>
+        <div>
+          <div class="benefit-title">Eliminate Cloud Breach Risk</div>
+          <div class="benefit-desc">Continuous misconfiguration detection and automated remediation eliminate the #1 cause of cloud breaches before attackers can discover and exploit exposed resources. Misconfigurations are remediated in minutes, not months.</div>
+          <span class="benefit-metric">→ 80% reduction in misconfiguration exposure</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">💸</div>
+        <div>
+          <div class="benefit-title">Reduce Cloud Spend</div>
+          <div class="benefit-desc">CIEM right-sizing removes unused permissions that often represent over-provisioned compute and storage resources. Customers typically discover significant idle resource spend alongside their permission sprawl problem during our initial assessment.</div>
+          <span class="benefit-metric">→ Average 15–25% reduction in cloud infrastructure costs</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">✅</div>
+        <div>
+          <div class="benefit-title">Pass Cloud-Specific Audits</div>
+          <div class="benefit-desc">Continuous CIS Benchmark compliance scoring for AWS, Azure, and GCP means your cloud environment is always audit-ready for SOC 2, ISO 27001, and PCI-DSS requirements that specifically address cloud infrastructure controls.</div>
+          <span class="benefit-metric">→ Continuous CIS Benchmark compliance scoring</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🔭</div>
+        <div>
+          <div class="benefit-title">Unified Multi-Cloud Visibility</div>
+          <div class="benefit-desc">A single pane of glass across AWS, Azure, and GCP eliminates the visibility gaps that attackers exploit when moving between cloud environments. Security teams see the full picture — not fragmented views from three separate native tools.</div>
+          <span class="benefit-metric">→ 100% cloud asset visibility in 48 hours</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">⬅️</div>
+        <div>
+          <div class="benefit-title">Shift-Left Security Culture</div>
+          <div class="benefit-desc">IaC scanning and developer IDE plugins catch security issues before they reach production — shifting cloud security left into the development pipeline where fixes are fast and cheap, rather than expensive production remediations after deployment.</div>
+          <span class="benefit-metric">→ 90% of IaC issues caught before production</span>
+        </div>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🔄</div>
+        <div>
+          <div class="benefit-title">Continuous vs. Periodic Scanning</div>
+          <div class="benefit-desc">Cloud environments change hundreds of times per day. Periodic scans miss the misconfigurations that appear between scan windows. CloudSufi monitors continuously — every resource change is evaluated against security policy within minutes of occurrence.</div>
+          <span class="benefit-metric">→ Sub-5-minute misconfiguration detection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI ADVANTAGE -->
+<section class="section ai-section">
+  <div class="container">
+    <div class="ai-layout">
+      <div>
+        <span class="label label-light">AI-Powered Platform</span>
+        <h2 class="h2 h2-white">AI Agents That <em>Secure Your Cloud</em> Automatically</h2>
+        <p class="sub sub-white" style="margin-bottom:40px;">CloudSufi's cloud security AI agents do not just detect — they respond. Misconfigurations are remediated. Permissions are right-sized. Threats are correlated and escalated. All without waiting for a human to act.</p>
+        <div class="ai-points">
+          <div class="ai-point">
+            <div class="ai-point-icon">🔭</div>
+            <div>
+              <div class="ai-point-title">Real-Time Posture Scoring</div>
+              <div class="ai-point-desc">The CSPM Agent maintains a live security score for every cloud account, updated continuously as resources are created, modified, or deleted. You always know your exact cloud security posture — not a snapshot from last week's scan.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">🧠</div>
+            <div>
+              <div class="ai-point-title">AI-Driven Permission Right-Sizing</div>
+              <div class="ai-point-desc">The CIEM Agent analyzes actual permission usage patterns over 90 days and generates least-privilege IAM policies that replace existing over-permissioned roles. It tells you not just what is wrong — it generates the exact fix ready for deployment.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">⚡</div>
+            <div>
+              <div class="ai-point-title">Automated Remediation Without Human Intervention</div>
+              <div class="ai-point-desc">For approved remediation categories — closing public S3 buckets, removing public RDP/SSH exposure, enabling encryption — the CSPM Agent remediates automatically. Your cloud environment self-heals in response to configuration drift.</div>
+            </div>
+          </div>
+          <div class="ai-point">
+            <div class="ai-point-icon">🔗</div>
+            <div>
+              <div class="ai-point-title">Cloud-Native Attack Chain Detection</div>
+              <div class="ai-point-desc">The Runtime Protection Agent correlates events across cloud logs, workload telemetry, and identity activity to detect multi-stage attack chains that span cloud services — identifying credential compromise, data access, and exfiltration attempts before they succeed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-panel">
+        <div class="ai-panel-label">Active Cloud Security Agents</div>
+        <div class="ai-row">
+          <div class="ai-row-icon">🔭</div>
+          <div>
+            <div class="ai-row-name">CSPM Agent</div>
+            <div class="ai-row-status">● Scanning Cloud Resources</div>
+          </div>
+          <div class="ai-row-val">
+            <div class="v">12,847</div>
+            <div class="l">resources assessed</div>
+          </div>
+        </div>
+        <div class="ai-divider"></div>
+        <div class="ai-row">
+          <div class="ai-row-icon">🔑</div>
+          <div>
+            <div class="ai-row-name">CIEM Agent</div>
+            <div class="ai-row-status">● Analyzing Permissions</div>
+          </div>
+          <div class="ai-row-val">
+            <div class="v">94%</div>
+            <div class="l">permissions right-sized</div>
+          </div>
+        </div>
+        <div class="ai-divider"></div>
+        <div class="ai-row">
+          <div class="ai-row-icon">🛡️</div>
+          <div>
+            <div class="ai-row-name">Runtime Protection Agent</div>
+            <div class="ai-row-status">● Monitoring Workloads</div>
+          </div>
+          <div class="ai-row-val">
+            <div class="v">847</div>
+            <div class="l">containers protected</div>
+          </div>
+        </div>
+        <div class="ai-divider"></div>
+        <div class="ai-row">
+          <div class="ai-row-icon">📋</div>
+          <div>
+            <div class="ai-row-name">IaC Scanner</div>
+            <div class="ai-row-status">● Scanning Pipelines</div>
+          </div>
+          <div class="ai-row-val">
+            <div class="v">100%</div>
+            <div class="l">IaC coverage</div>
+          </div>
+        </div>
+        <div class="ai-core" style="margin-top:16px;">
+          <strong>CloudSufi Cloud Security Engine</strong>
+          <span>CSPM · CIEM · CWPP · IaC · Auto-Remediation</span>
+        </div>
+        <div style="margin-top:16px;padding:14px;background:rgba(0,208,132,0.08);border:1px solid rgba(0,208,132,0.2);border-radius:8px;text-align:center;">
+          <div style="font-size:28px;font-weight:900;color:#00D084;font-family:'JetBrains Mono',monospace;">A+</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Cloud Security Posture Score</div>
+          <div style="font-size:11px;color:#00D084;margin-top:2px;">↑ Improved from C- at engagement start</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section method-section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:flex-start;">
+      <div>
+        <span class="label">Our Approach</span>
+        <h2 class="h2">Cloud Security <em>Deployment Methodology</em></h2>
+        <p class="sub">CloudSufi's five-phase cloud security deployment delivers full visibility and automated protection across your entire cloud estate in 48 hours — with zero disruption to your existing workloads.</p>
+        <div style="margin-top:32px;padding:24px;background:var(--cs-off-white);border-radius:12px;border-left:4px solid var(--cs-blue);">
+          <div style="font-size:13px;font-weight:700;color:var(--cs-blue);margin-bottom:8px;">DEPLOYMENT TIMELINE</div>
+          <div style="font-size:14px;color:var(--cs-text-mid);">Hour 1–4: Cloud account connection and discovery<br/>Hour 4–24: Full asset inventory and posture scoring<br/>Day 2–3: CIEM analysis and permission right-sizing<br/>Day 3–5: CWPP deployment and runtime monitoring<br/>Day 5+: Continuous monitoring and remediation active</div>
+        </div>
+      </div>
+      <div class="method-steps">
+        <div class="method-step reveal">
+          <div class="ms-num">1</div>
+          <div>
+            <div class="ms-title">Cloud Discovery &amp; Inventory</div>
+            <div class="ms-desc">Read-only integration with all cloud accounts provides complete asset discovery within hours. Every resource — compute, storage, database, network, identity, and serverless — is catalogued and mapped. Most organizations discover resources they did not know they had during this phase.</div>
+            <div class="ms-tags">
+              <span class="tag">Asset Discovery</span><span class="tag">Multi-Account</span><span class="tag">Resource Inventory</span>
+            </div>
+          </div>
+        </div>
+        <div class="method-step reveal">
+          <div class="ms-num">2</div>
+          <div>
+            <div class="ms-title">Posture Assessment</div>
+            <div class="ms-desc">Every discovered resource is immediately assessed against 500+ security policies and CIS Benchmarks for the applicable cloud provider. A prioritized finding list is generated within 24 hours, ranked by exploitability and blast radius — so your team knows exactly where to focus.</div>
+            <div class="ms-tags">
+              <span class="tag">CIS Benchmarks</span><span class="tag">Risk Prioritization</span><span class="tag">Compliance Mapping</span>
+            </div>
+          </div>
+        </div>
+        <div class="method-step reveal">
+          <div class="ms-num">3</div>
+          <div>
+            <div class="ms-title">Permission Analysis</div>
+            <div class="ms-desc">The CIEM engine analyzes all identities, roles, policies, and permission usage patterns to identify over-privileged access. AI-generated least-privilege replacement policies are reviewed and approved before deployment — giving you full control of what gets changed and when.</div>
+            <div class="ms-tags">
+              <span class="tag">IAM Analysis</span><span class="tag">Least Privilege</span><span class="tag">Policy Generation</span>
+            </div>
+          </div>
+        </div>
+        <div class="method-step reveal">
+          <div class="ms-num">4</div>
+          <div>
+            <div class="ms-title">Runtime Protection Deployment</div>
+            <div class="ms-desc">CWPP agents are deployed to protected workloads using lightweight DaemonSets for Kubernetes, host agents for VMs, and native integrations for serverless functions. Behavioral baselines are established and runtime threat detection goes live with zero impact to workload performance.</div>
+            <div class="ms-tags">
+              <span class="tag">Agent Deployment</span><span class="tag">Behavioral Baseline</span><span class="tag">Zero Disruption</span>
+            </div>
+          </div>
+        </div>
+        <div class="method-step reveal">
+          <div class="ms-num">5</div>
+          <div>
+            <div class="ms-title">Continuous Monitoring &amp; Remediation</div>
+            <div class="ms-desc">Auto-remediation policies are configured for approved fix categories. Alerting thresholds are tuned to your environment. Ongoing operations include continuous scanning, weekly posture reports, and quarterly access reviews — keeping your cloud security posture continuously improving over time.</div>
+            <div class="ms-tags">
+              <span class="tag">Auto-Remediation</span><span class="tag">Continuous Scanning</span><span class="tag">Posture Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES BAND -->
+<section class="outcomes-band">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px;position:relative;">
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;">Measured Outcomes</div>
+      <div style="font-size:clamp(22px,3vw,36px);font-weight:900;color:#fff;">What Clients Achieve with CloudSufi Cloud Security</div>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-cell">
+        <div class="outcome-num">80<span class="outcome-unit outcome-accent">%</span></div>
+        <div class="outcome-label">Misconfiguration Reduction</div>
+        <div class="outcome-sub">within 30 days of deployment</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num">90<span class="outcome-unit outcome-accent">%</span></div>
+        <div class="outcome-label">Permission Right-Sizing</div>
+        <div class="outcome-sub">of over-privileged access eliminated</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num"><span class="outcome-accent">Live</span></div>
+        <div class="outcome-label">Real-Time Posture Scoring</div>
+        <div class="outcome-sub">continuous — not periodic snapshots</div>
+      </div>
+      <div class="outcome-cell">
+        <div class="outcome-num">48<span class="outcome-unit outcome-accent">hr</span></div>
+        <div class="outcome-label">To Full Cloud Visibility</div>
+        <div class="outcome-sub">from zero to complete asset inventory</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED SERVICES -->
+<section class="section related-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px;">
+      <span class="label">Related Services</span>
+      <h2 class="h2">Complete Your Cloud Security <em>Program</em></h2>
+      <p class="sub sub-center">Cloud security pairs with vulnerability management, identity access control, and application security to deliver defense-in-depth across your entire technology stack.</p>
+    </div>
+    <div class="related-grid">
+      <a href="vulnerability-management.html" class="related-card reveal">
+        <div class="related-icon">🔍</div>
+        <div class="related-title">Vulnerability Management</div>
+        <div class="related-desc">Continuous vulnerability scanning with AI-powered prioritization and automated remediation workflows for your entire cloud estate.</div>
+        <span class="related-link">Explore Vulnerability Management →</span>
+      </a>
+      <a href="iam.html" class="related-card reveal">
+        <div class="related-icon">🔐</div>
+        <div class="related-title">Identity &amp; Access</div>
+        <div class="related-desc">Zero Trust identity governance, MFA enforcement, and privileged access management across cloud and on-premises environments.</div>
+        <span class="related-link">Explore Identity &amp; Access →</span>
+      </a>
+      <a href="appsec.html" class="related-card reveal">
+        <div class="related-icon">🖥️</div>
+        <div class="related-title">Application Security</div>
+        <div class="related-desc">SAST, DAST, and SCA scanning integrated into CI/CD pipelines to catch application vulnerabilities before they reach cloud production.</div>
+        <span class="related-link">Explore Application Security →</span>
+      </a>
+      <a href="soc.html" class="related-card reveal">
+        <div class="related-icon">🛡️</div>
+        <div class="related-title">SOC-as-a-Service</div>
+        <div class="related-desc">24/7 AI-augmented security operations that monitor cloud environments for threats and respond in real time — extending your team around the clock.</div>
+        <span class="related-link">Explore SOC-as-a-Service →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-title">Get Your Cloud Security Posture Scored — Free</div>
+      <div class="cta-desc">In 48 hours we will give you a complete cloud security posture score across all your AWS, Azure, and GCP accounts — with a prioritized remediation roadmap and estimated breach risk reduction. No agents to install. No disruption to your workloads.</div>
+      <div class="cta-actions">
+        <a href="index.html#contact" class="btn btn-white">Get Free Cloud Posture Score</a>
+        <a href="index.html#contact" class="btn btn-outline-white">Schedule a Demo</a>
+      </div>
+      <div class="cta-perks">
+        <span class="cta-perk">Read-only access required</span>
+        <span class="cta-perk">48-hour assessment delivery</span>
+        <span class="cta-perk">All cloud providers covered</span>
+        <span class="cta-perk">Zero workload disruption</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="16" stroke="#FF4646" stroke-width="2.2"/><circle cx="20" cy="22" r="10" stroke="#FF4646" stroke-width="2.2"/><circle cx="20" cy="22" r="4" fill="#FF4646"/><line x1="20" y1="22" x2="30" y2="8" stroke="#FF4646" stroke-width="2.2" stroke-linecap="round"/><polyline points="26,7 30,8 29,12" stroke="#FF4646" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="5" r="2" fill="#1863DC"/><circle cx="37" cy="10" r="1.5" fill="#00D084"/><circle cx="36" cy="3" r="1.3" fill="#75CCCF"/></svg>
+        <span class="footer-wordmark">CLOUDSUFI</span>
+      </div>
+      <p class="footer-tagline">We Make Enterprise Data Dance — and we keep it safe.</p>
+      <div class="footer-contact-item">📧 <a href="mailto:security@cloudsufi.com">security@cloudsufi.com</a></div>
+      <div class="footer-contact-item">🌐 <a href="https://cloudsufi.com">cloudsufi.com</a></div>
+      <div class="footer-certs"><span class="fcert">ISO 27001</span><span class="fcert">SOC 2 Type II</span><span class="fcert">FedRAMP Ready</span></div>
+    </div>
+    <div><div class="footer-h">Services</div><ul class="footer-links"><li><a href="soc.html">SOC-as-a-Service</a></li><li><a href="vulnerability-management.html">Vulnerability Management</a></li><li><a href="risk-management.html">Risk Management</a></li><li><a href="grc.html">Compliance &amp; Audit</a></li><li><a href="cloud-security.html">Cloud Security</a></li><li><a href="pentest.html">Penetration Testing</a></li><li><a href="incident-response.html">Incident Response</a></li></ul></div>
+    <div><div class="footer-h">Domains</div><ul class="footer-links"><li><a href="threat-intelligence.html">Threat Intelligence</a></li><li><a href="iam.html">Identity &amp; Access</a></li><li><a href="network-security.html">Network Security</a></li><li><a href="appsec.html">Application Security</a></li><li><a href="data-security.html">Data Security</a></li><li><a href="grc.html">GRC</a></li></ul></div>
+    <div><div class="footer-h">Company</div><ul class="footer-links"><li><a href="https://cloudsufi.com/about">About CloudSufi</a></li><li><a href="index.html#contact">Contact Sales</a></li><li><a href="index.html#contact">Request Demo</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2024 CloudSufi Inc. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Security</a></div>
+  </div>
+</div></footer>
+<script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');} }); }, {threshold:0.08}).observe(el);
+  });
+</script>
+</body></html>
