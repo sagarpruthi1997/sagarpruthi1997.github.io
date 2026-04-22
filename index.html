@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0C1E39" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
   <title>CloudSufi | AI-Powered Information Security Solutions</title>
   <meta name="description" content="CloudSufi delivers next-generation InfoSec services powered by AI agents — SOC, Vulnerability Management, Risk, Compliance, and more. Maximum security output with minimum resources." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -683,30 +687,132 @@
     .reveal:nth-child(5) { transition-delay: 0.32s; }
     .reveal:nth-child(6) { transition-delay: 0.40s; }
 
-    /* ─── RESPONSIVE ───────────────────────────────────────────────── */
+    /* ─── NAV HAMBURGER (index-specific) ──────────────────────────── */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 8px; margin-left: 8px;
+      width: 44px; height: 44px; align-items: center; justify-content: center;
+      border-radius: var(--radius-sm); transition: background 0.2s; flex-shrink: 0;
+      -webkit-appearance: none; cursor: pointer;
+    }
+    .nav-hamburger:hover { background: var(--cs-off-white); }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--cs-text-dark); border-radius: 2px; transition: all 0.28s cubic-bezier(0.4,0,0.2,1); transform-origin: center; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: block; max-height: 0; overflow: hidden; background: var(--cs-white); border-top: 1px solid var(--cs-border); box-shadow: 0 8px 24px rgba(0,0,0,0.1); transition: max-height 0.35s ease; }
+    .nav-mobile.open { max-height: 600px; }
+    .nav-mobile a { display: flex; align-items: center; padding: 15px 24px; font-size: 15px; font-weight: 500; color: var(--cs-text-dark); text-decoration: none; border-bottom: 1px solid #f0f0f0; transition: background 0.15s, color 0.15s; min-height: 52px; }
+    .nav-mobile a:hover { background: var(--cs-off-white); color: var(--cs-blue); }
+    .nav-mobile a:last-of-type { border-bottom: none; }
+    .nm-cta { padding: 16px 24px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--cs-border); padding-bottom: calc(20px + env(safe-area-inset-bottom)); }
+    .nm-cta .btn { width: 100%; min-height: 48px; }
+
+    /* ─── REVEAL ───────────────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal:nth-child(2) { transition-delay: 0.07s; }
+    .reveal:nth-child(3) { transition-delay: 0.14s; }
+    .reveal:nth-child(4) { transition-delay: 0.21s; }
+    .reveal:nth-child(5) { transition-delay: 0.28s; }
+    .reveal:nth-child(6) { transition-delay: 0.35s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+    /* ─── RESPONSIVE — 1024px ──────────────────────────────────────── */
     @media(max-width: 1024px) {
-      .hero-layout { grid-template-columns: 1fr; }
-      .threat-panel { display: none; }
-      .ai-layout { grid-template-columns: 1fr; gap: 48px; }
+      .hero-layout    { grid-template-columns: 1fr; }
+      .threat-panel   { display: none; }
+      .ai-layout      { grid-template-columns: 1fr; gap: 48px; }
       .process-layout { grid-template-columns: 1fr; gap: 48px; }
-      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .metrics-grid   { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid    { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
     }
+    /* ─── RESPONSIVE — 768px ───────────────────────────────────────── */
     @media(max-width: 768px) {
-      .section { padding: 64px 0; }
-      .nav-links { display: none; }
-      .hero-stats { flex-wrap: wrap; gap: 20px; }
-      .hero-stat { border-right: none; padding-right: 0; margin-right: 0; }
-      .why-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
+      .section         { padding: 56px 0; }
+      .container       { padding: 0 16px; }
+      .nav-links       { display: none !important; }
+      .nav-cta         { display: none !important; }
+      .nav-hamburger   { display: flex; }
+      /* hero */
+      .hero            { padding-top: 64px; }
+      .hero-body       { padding: 80px 0 56px; }
+      .hero-title      { font-size: clamp(30px,7vw,46px); letter-spacing:-1px; }
+      .hero-desc       { font-size: 15px; }
+      .hero-actions    { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-stats      { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px; margin-top: 28px; }
+      .hero-stat       { border-right: none; padding-right: 0; margin-right: 0; }
+      /* trust bar */
+      .trust-inner     { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .trust-logos     { gap: 18px; }
+      /* domains */
+      .domains-grid    { grid-template-columns: 1fr; }
+      /* metrics */
+      .metrics-grid    { grid-template-columns: 1fr 1fr; }
+      /* services */
+      .services-grid   { grid-template-columns: 1fr; }
+      /* AI twin */
+      .ai-layout       { grid-template-columns: 1fr; gap: 36px; }
+      .ai-panel        { padding: 20px; }
+      /* process */
+      .process-layout  { grid-template-columns: 1fr; gap: 40px; }
+      .steps::before   { display: none; }
+      /* why */
+      .why-grid        { grid-template-columns: 1fr; }
+      /* cta */
+      .cta-box         { padding: 36px 20px; }
+      .cta-actions     { flex-direction: column; }
+      .cta-actions .btn { width: 100%; max-width: 360px; margin: 0 auto; }
+      .quick-stats     { gap: 12px; }
+      .qs-item         { padding: 14px 20px; }
+      /* comparison */
+      .table-scroll    { -webkit-overflow-scrolling: touch; }
+      /* compliance */
+      .compliance-grid { grid-template-columns: repeat(3, 1fr); }
+      /* footer */
+      .footer-grid     { grid-template-columns: 1fr; gap: 28px; }
+      .footer-grid > div:first-child { grid-column: auto; }
+      .footer-bottom   { flex-direction: column; align-items: flex-start; }
+      /* marquee */
+      .marquee-item    { padding: 0 24px; }
     }
+    /* ─── RESPONSIVE — 480px ───────────────────────────────────────── */
     @media(max-width: 480px) {
-      .hero-title { font-size: 34px; letter-spacing: -1px; }
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
-      .metrics-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .container       { padding: 0 14px; }
+      .hero-title      { font-size: 28px; }
+      .hero-stats      { grid-template-columns: 1fr; }
+      .hero-stat       { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 14px; }
+      .hero-stat:last-child { border-bottom: none; }
+      .metrics-grid    { grid-template-columns: 1fr 1fr; }
+      .metric-item     { padding: 28px 16px; }
+      .metric-num      { font-size: 36px; }
+      .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-perks       { flex-direction: column; gap: 8px; align-items: center; }
+      .quick-stats     { flex-direction: column; align-items: stretch; }
+      .qs-item         { text-align: center; }
+      .footer-bottom-links { gap: 12px; }
     }
+    /* ─── RESPONSIVE — 375px (iPhone SE) ─────────────────────────── */
+    @media(max-width: 375px) {
+      .nav-inner       { height: 58px; }
+      .logo-wordmark   { font-size: 17px; }
+      .logo-icon       { width: 32px; height: 32px; }
+      .hero-title      { font-size: 26px; }
+      .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-logos     { gap: 12px; }
+    }
+    /* ─── iOS SAFE AREA ─────────────────────────────────────────────── */
+    .nav .container { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+    .nm-cta { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+    .footer { padding-bottom: env(safe-area-inset-bottom); }
+    .footer-bottom { padding-bottom: calc(22px + env(safe-area-inset-bottom)); }
+    /* ─── FOCUS VISIBLE ─────────────────────────────────────────────── */
+    :focus-visible { outline: 2px solid var(--cs-blue); outline-offset: 3px; border-radius: 4px; }
+    :focus:not(:focus-visible) { outline: none; }
+    /* ─── REDUCED MOTION ────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
   </style>
 </head>
 <body>
@@ -751,10 +857,26 @@
       </div>
 
       <div class="nav-cta">
-        <a href="#contact" class="btn btn-outline-blue" style="padding:10px 20px;font-size:13px;">Schedule Demo</a>
-        <a href="#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Free Assessment</a>
+        <a href="#contact" class="btn btn-outline-blue" style="padding:10px 18px;font-size:13px;">Schedule Demo</a>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 18px;font-size:13px;">Free Assessment</a>
       </div>
 
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#services">Services</a>
+    <a href="#domains">Domains</a>
+    <a href="#ai-twin">AI Digital Twin</a>
+    <a href="#comparison">Compare</a>
+    <a href="#compliance">Compliance</a>
+    <a href="#contact">Contact</a>
+    <div class="nm-cta">
+      <a href="#contact" class="btn btn-outline-blue">Schedule Demo</a>
+      <a href="#contact" class="btn btn-primary">Free Assessment</a>
     </div>
   </div>
 </nav>
@@ -1604,34 +1726,14 @@
 </footer>
 
 <!-- ══════════ SCRIPTS ══════════ -->
+<script src="shared.js"></script>
 <script>
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
-
-  // Smooth anchor scroll with nav offset
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      const id = link.getAttribute('href');
-      const target = document.querySelector(id);
-      if (!target || id === '#') return;
-      e.preventDefault();
-      const offset = 74;
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-    });
-  });
-
-  // Live threat panel time drift
-  const tpTimes = document.querySelectorAll('.tp-time');
-  const times = [0, 2, 5, 11, 18];
-  setInterval(() => {
-    for (let i = 1; i < times.length; i++) times[i] += (Math.random() < 0.25 ? 1 : 0);
-    tpTimes.forEach((el, i) => { el.textContent = times[i] === 0 ? '0s ago' : times[i] + 'm ago'; });
+  /* Threat panel live ticker (index-only) */
+  var tpTimes = document.querySelectorAll('.tp-time');
+  var times = [0, 2, 5, 11, 18];
+  setInterval(function() {
+    for (var i = 1; i < times.length; i++) times[i] += (Math.random() < 0.25 ? 1 : 0);
+    tpTimes.forEach(function(el, i) { el.textContent = times[i] === 0 ? '0s ago' : times[i] + 'm ago'; });
   }, 6000);
 </script>
 

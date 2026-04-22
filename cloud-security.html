@@ -22,8 +22,22 @@
   <div class="nav-cta">
     <a href="index.html#contact" class="btn btn-outline-blue" style="padding:10px 20px;font-size:13px;">Schedule Demo</a>
     <a href="index.html#contact" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Free Assessment</a>
+  
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#domains">All Domains</a>
+    <a href="index.html#ai-twin">AI Digital Twin</a>
+    <a href="index.html#comparison">Compare</a>
+    <a href="index.html#contact">Contact</a>
+    <div class="nm-cta">
+      <a href="index.html#contact" class="btn btn-outline-blue">Schedule Demo</a>
+      <a href="index.html#contact" class="btn btn-primary">Free Assessment</a>
+    </div>
   </div>
-</div></div></nav>
+</nav>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
@@ -637,9 +651,5 @@
     <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Security</a></div>
   </div>
 </div></footer>
-<script>
-  document.querySelectorAll('.reveal').forEach(el => {
-    new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');} }); }, {threshold:0.08}).observe(el);
-  });
-</script>
+<script src="shared.js"></script>
 </body></html>
